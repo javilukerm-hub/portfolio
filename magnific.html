@@ -43,18 +43,32 @@
              color:var(--gris-borrador);margin-top:1.4rem}
   .reto{margin-top:2.4rem;font-size:1.15rem;color:var(--verde-tinta);max-width:60ch}
   .reto strong{color:var(--verde-botella)}
+  .idea{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.5rem);
+        line-height:1.15;letter-spacing:-.02em;color:var(--verde-botella);
+        max-width:26ch;margin-top:2.8rem;padding-left:1.4rem;
+        border-left:4px solid var(--azahar)}
+
+  /* ---------- CTA FINAL ---------- */
+  .proj-cta{padding:4rem 5vw 1rem;max-width:1150px;margin-inline:auto}
+  .proj-cta .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--azahar);margin-bottom:.8rem}
+  .proj-cta a{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);
+              letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .proj-cta a:hover{color:var(--azahar)}
 
   /* ---------- SECCIONES ---------- */
-  .proj-section{padding:4.5rem 5vw;max-width:1150px;margin-inline:auto}
+  .proj-section{padding:4.5rem 5vw;max-width:1150px;margin-inline:auto;
+                display:grid;grid-template-columns:minmax(240px,.9fr) 1.4fr;gap:1rem 4rem;align-items:start}
   .proj-section .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
-                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1.4rem}
-  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,3rem);
-                   line-height:1.08;letter-spacing:-.02em;margin-bottom:1.4rem;max-width:22ch}
+                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1rem;grid-column:1}
+  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.7rem);
+                   line-height:1.08;letter-spacing:-.02em;grid-column:1;position:sticky;top:6rem}
+  .proj-section .texto{grid-column:2;grid-row:1/span 3}
   .proj-section p{max-width:62ch;margin-bottom:1rem;color:var(--verde-tinta)}
-  .proj-visual{margin-top:2.4rem;border-radius:10px;overflow:hidden}
+  .proj-visual{grid-column:1/-1;margin-top:2rem;border-radius:10px;overflow:hidden}
   .proj-visual img{width:100%;display:block}
   .proj-visual.transparente{border-radius:0;overflow:visible}
-  .visual-caption{font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
+  .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
                   margin-top:.8rem;letter-spacing:.04em}
   .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
            margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
@@ -78,6 +92,10 @@
   @media (max-width:760px){
     nav ul{gap:1.1rem}
     .proj-header{padding-top:7rem}
+    .proj-section{grid-template-columns:1fr;gap:.6rem}
+    .proj-section h2{position:static;grid-column:1;margin-bottom:1rem}
+    .proj-section .texto{grid-column:1;grid-row:auto}
+    .proj-visual,.visual-caption{grid-column:1}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important}
@@ -102,16 +120,18 @@
   <h1>Magnific (formerly Freepik)</h1>
   <p class="proj-meta">Copy · Product Marketing · Agosto 2023 — Actualidad</p>
   <p class="reto">
-    <strong>El reto: convertir a Magnific en la principal plataforma que integra todas las soluciones
-    creativas de diseño (Stock + IA + Edit) en un único lugar.</strong>
+    <strong>El reto: transformar Freepik — un banco de recursos nacido en Málaga — en una
+    plataforma creativa para profesionales y equipos, capaz de competir contra Higgsfield,
+    Midjourney y Adobe.</strong>
   </p>
+  <p class="idea">Un objetivo, tres proyectos: una marca nueva, un producto para equipos
+  y un estudio que lo demuestra.</p>
   <p class="reto">
-    Desde que entré en Freepik hace dos años como copywriter, la empresa ha cambiado de nombre,
-    de producto, de posicionamiento y de categoría. Lo que empezó siendo un banco de imágenes
-    nacido en Málaga compite hoy contra Higgsfield, Midjourney y Adobe. El objetivo siempre ha sido
-    el mismo: convertir Magnific en la plataforma creativa de referencia. El lugar donde cualquier
-    creativo puede inspirarse, crear y entregar un producto final sin saltar de una herramienta a otra.
-    Estos son algunos de los últimos proyectos en los que he estado trabajando.
+    Desde que entré en Freepik hace casi tres años como copywriter, la empresa ha cambiado de
+    nombre, de producto, de posicionamiento y de categoría. He estado dentro de cada uno de esos
+    cambios poniéndoles palabras — y todos apuntaban al mismo sitio: el lugar donde cualquier
+    profesional puede inspirarse, crear y entregar un producto final sin saltar de una herramienta
+    a otra.
   </p>
 </div>
 
@@ -119,10 +139,13 @@
 <section class="proj-section" id="rebranding">
   <p class="eyebrow">Rebranding</p>
   <h2>De Freepik a Magnific</h2>
+  <div class="texto">
   <p>
+    <strong>El primer paso era la cara: que el nombre dijera lo que la empresa quería ser.</strong>
     En 2026, Freepik dejó de ser Freepik. El rebranding a Magnific no fue solo un cambio de nombre —
-    fue una redefinición completa de lo que la empresa es, hace y comunica. Un proyecto que sigue
-    en construcción hoy, adaptando cada touchpoint, cada tono y cada mensaje a una nueva
+    fue una redefinición completa de lo que la empresa es, hace y comunica, dejando atrás la
+    asociación con "lo gratis" para hablar de tú a tú a los profesionales. Un proyecto que sigue
+    en construcción hoy, adaptando cada touchpoint, cada tono y cada mensaje a la nueva
     personalidad de marca.
   </p>
   <p>
@@ -132,6 +155,7 @@
     un ejercicio de traducir una nueva personalidad de marca en palabras concretas, para
     audiencias distintas.
   </p>
+  </div>
   <div class="proj-visual"><img src="img/rewrite.png" alt="Rewrite the rules of creativity — visual del press kit de Magnific"></div>
   <p class="visual-caption">Key message del press kit del rebranding.</p>
   <!-- TODO: incrustar aquí el tweet con el vídeo POV -->
@@ -143,11 +167,13 @@
 <section class="proj-section" id="business">
   <p class="eyebrow">B2B</p>
   <h2>Freepik Business</h2>
+  <div class="texto">
   <p>
-    Uno de los principales cambios con el rebranding fue el target de la compañía. Freepik había
-    sido un producto tradicionalmente B2C, enfocado en diseñadores y creativos como usuario final.
-    Business fue, junto a Enterprise, la apuesta de la empresa por entrar en el territorio de
-    equipos, agencias, startups y productoras que necesitan una solución creativa compartida.
+    <strong>Si la marca era la cara, Business era el producto que materializaba el foco en
+    equipos.</strong> Freepik había sido un producto tradicionalmente B2C, enfocado en diseñadores
+    y creativos como usuario final. Business fue, junto a Enterprise, la apuesta por entrar en el
+    territorio de equipos, agencias, startups y productoras que necesitan una solución creativa
+    compartida.
   </p>
   <p>
     Un cambio de audiencia implica un cambio de todo lo demás: tono, argumentario, canales, y la
@@ -157,6 +183,7 @@
     mensajes a cada medio y momento del funnel, desde awareness hasta conversión. Para mí, fue el
     proyecto donde más aprendí sobre cómo se construye una campaña B2B de cero.
   </p>
+  </div>
   <div class="proj-visual transparente"><img src="img/business-mockup.png" alt="Emails de la campaña de Freepik Business"></div>
   <p class="visual-caption">Dos emails del funnel de Freepik Business: lanzamiento del plan y upgrade a anual.</p>
 </section>
@@ -167,11 +194,13 @@
 <section class="proj-section" id="originals">
   <p class="eyebrow">Estudio</p>
   <h2>Magnific Originals</h2>
+  <div class="texto">
   <p>
-    Magnific Originals es la apuesta más ambiciosa de la compañía: un estudio propio que coproduce,
-    junto a los mejores creadores audiovisuales del mundo, proyectos hechos íntegramente con la
-    Magnific Creative Suite. El primero en salir fue <em>The Chronicles of Bone</em>, el universo
-    de fantasía oscura de Kavan Cardoza, que acumula millones de visualizaciones.
+    <strong>Y Originals es la prueba: si los mejores profesionales del mundo crean aquí, es una
+    plataforma profesional.</strong> Un estudio propio que coproduce, junto a los mejores creadores
+    audiovisuales del momento, proyectos hechos íntegramente con la Magnific Creative Suite. El
+    primero en salir fue <em>The Chronicles of Bone</em>, el universo de fantasía oscura de Kavan
+    Cardoza, que acumula millones de visualizaciones.
   </p>
   <p>
     El trabajo que brilla aquí es el de los creadores — y así debe ser. Mi trabajo fue darle
@@ -181,6 +210,7 @@
     industria — y hacer que un cineasta entienda en una landing por qué querría coproducir con una
     plataforma de IA.
   </p>
+  </div>
   <div class="proj-visual transparente"><img src="img/originals-mockup.png" alt="Landing de Magnific Originals"></div>
   <p class="visual-caption">La landing de Magnific Originals: "Series, shorts & movies. Talent directed, powered by AI."</p>
   <!-- TODO: incrustar aquí el tráiler de The Chronicles of Bone -->
@@ -192,15 +222,24 @@
 <section class="proj-section" id="lanzamientos">
   <p class="eyebrow">Producto</p>
   <h2>Lanzamientos de la suite de IA</h2>
+  <div class="texto">
   <p>
-    En una plataforma que integra los mejores modelos de imagen, vídeo y audio del mercado, hay
-    algo nuevo que comunicar casi cada semana. Junto a mi equipo, he trabajado el copy de
-    lanzamiento de herramientas y funcionalidades de la suite — del AI Video Generator en adelante —
-    en posts, emails y campañas que tienen que explicar tecnología compleja en el tiempo que dura
-    un scroll.
+    <strong>Y debajo de todo, las herramientas que sostienen la promesa.</strong> En una plataforma
+    que integra los mejores modelos de imagen, vídeo y audio del mercado, hay algo nuevo que
+    comunicar casi cada semana. Junto a mi equipo, he trabajado el copy de lanzamiento de
+    herramientas y funcionalidades de la suite — del AI Video Generator en adelante — en posts,
+    emails y campañas que tienen que explicar tecnología compleja a profesionales en el tiempo que
+    dura un scroll.
   </p>
+  </div>
   <!-- TODO: incrustar aquí los posts de Twitter/X de los lanzamientos -->
 </section>
+
+<!-- CTA -->
+<div class="proj-cta">
+  <p class="eyebrow">¿Tienes un reto parecido?</p>
+  <a href="mailto:hola@javisendra.com">Hablemos →</a>
+</div>
 
 <!-- SIGUIENTE PROYECTO -->
 <div class="next-proj">
