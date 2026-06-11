@@ -70,6 +70,10 @@
   .proj-visual.transparente{border-radius:0;overflow:visible}
   .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
                   margin-top:.8rem;letter-spacing:.04em}
+  .embed-tweet{grid-column:1/-1;margin-top:2rem;max-width:560px}
+  .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
+               border-radius:10px;overflow:hidden;background:var(--verde-botella)}
+  .embed-video iframe{width:100%;height:100%;border:0;display:block}
   .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
            margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
 
@@ -128,7 +132,8 @@
   y un estudio que lo demuestra.</p>
   <p class="reto">
     Desde que entré en Freepik hace casi tres años como copywriter, la empresa ha cambiado de
-    nombre, de producto, de posicionamiento y de categoría. He estado dentro de esos cambios y todos apuntaban al mismo sitio: el lugar donde cualquier
+    nombre, de producto, de posicionamiento y de categoría. He estado dentro de cada uno de esos
+    cambios poniéndoles palabras — y todos apuntaban al mismo sitio: el lugar donde cualquier
     profesional puede inspirarse, crear y entregar un producto final sin saltar de una herramienta
     a otra.
   </p>
@@ -157,7 +162,12 @@
   </div>
   <div class="proj-visual"><img src="img/rewrite.png" alt="Rewrite the rules of creativity — visual del press kit de Magnific"></div>
   <p class="visual-caption">Key message del press kit del rebranding.</p>
-  <!-- TODO: incrustar aquí el tweet con el vídeo POV -->
+  <div class="embed-tweet">
+    <blockquote class="twitter-tweet" data-dnt="true">
+      <a href="https://twitter.com/magnific/status/2052730904200778137"></a>
+    </blockquote>
+  </div>
+  <p class="visual-caption">El vídeo POV de lanzamiento del rebranding.</p>
 </section>
 
 <hr class="divider">
@@ -168,7 +178,7 @@
   <h2>Freepik Business</h2>
   <div class="texto">
   <p>
-    <strong>Si la marca era la cara, Business era uno de los productos que materializaba el foco en
+    <strong>Si la marca era la cara, Business era el producto que materializaba el foco en
     equipos.</strong> Freepik había sido un producto tradicionalmente B2C, enfocado en diseñadores
     y creativos como usuario final. Business fue, junto a Enterprise, la apuesta por entrar en el
     territorio de equipos, agencias, startups y productoras que necesitan una solución creativa
@@ -185,6 +195,12 @@
   </div>
   <div class="proj-visual transparente"><img src="img/business-mockup.png" alt="Emails de la campaña de Freepik Business"></div>
   <p class="visual-caption">Dos emails del funnel de Freepik Business: lanzamiento del plan y upgrade a anual.</p>
+  <div class="embed-tweet">
+    <blockquote class="twitter-tweet" data-dnt="true">
+      <a href="https://twitter.com/magnific/status/2014013084076306853"></a>
+    </blockquote>
+  </div>
+  <p class="visual-caption">El anuncio de Freepik Business en X.</p>
 </section>
 
 <hr class="divider">
@@ -199,20 +215,25 @@
     plataforma profesional.</strong> Un estudio propio que coproduce, junto a los mejores creadores
     audiovisuales del momento, proyectos hechos íntegramente con la Magnific Creative Suite. El
     primero en salir fue <em>The Chronicles of Bone</em>, el universo de fantasía oscura de Kavan
-    the Kid, que acumula millones de visualizaciones.
+    Cardoza, que acumula millones de visualizaciones.
   </p>
   <p>
-    El trabajo que brilla aquí es el de los creadores, como debe ser. Mi trabajo fue darle
+    El trabajo que brilla aquí es el de los creadores — y así debe ser. Mi trabajo fue darle
     palabras al programa: escribí todo el copy que rodea a Originals, desde la landing que explica
     qué es y a quién va dirigido, hasta los blog posts, emails y notificaciones con los que lo
-    lanzamos al mundo. El reto: comunicar algo que no existía antes, ni en Magnific ni casi en la
-    industria, y hacer que un cineasta entienda en una landing por qué querría coproducir con una
+    lanzamos al mundo. El reto: comunicar algo que no existía antes — ni en Magnific ni casi en la
+    industria — y hacer que un cineasta entienda en una landing por qué querría coproducir con una
     plataforma de IA.
   </p>
   </div>
   <div class="proj-visual transparente"><img src="img/originals-mockup.png" alt="Landing de Magnific Originals"></div>
   <p class="visual-caption">La landing de Magnific Originals: "Series, shorts & movies. Talent directed, powered by AI."</p>
-  <!-- TODO: incrustar aquí el tráiler de The Chronicles of Bone -->
+  <div class="embed-video">
+    <iframe src="https://www.youtube.com/embed/y7gIoHq-YDo" title="The Chronicles of Bone — Capítulo 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Capítulo 1 de The Chronicles of Bone, de Kavan Cardoza — el primer Magnific Original.</p>
 </section>
 
 <hr class="divider">
@@ -226,7 +247,8 @@
     <strong>Y debajo de todo, las herramientas que sostienen la promesa.</strong> En una plataforma
     que integra los mejores modelos de imagen, vídeo y audio del mercado, hay algo nuevo que
     comunicar casi cada semana. Junto a mi equipo, he trabajado el copy de lanzamiento de
-    herramientas y funcionalidades de la suite en posts, emails y campañas que tienen que explicar tecnología compleja a profesionales en el tiempo que
+    herramientas y funcionalidades de la suite — del AI Video Generator en adelante — en posts,
+    emails y campañas que tienen que explicar tecnología compleja a profesionales en el tiempo que
     dura un scroll.
   </p>
   </div>
@@ -253,5 +275,6 @@
   </div>
 </footer>
 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
