@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javi Sendra — Copywriter & Creativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- HERO: el borrador ---------- */
+  header{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw;position:relative}
+  .draft-label{font-family:var(--mono);font-size:.75rem;color:var(--gris-borrador);margin-bottom:1.6rem;letter-spacing:.06em}
+  .draft-label em{font-style:normal;color:var(--azahar)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7.2vw,6.4rem);line-height:1.04;letter-spacing:-.025em;max-width:18ch}
+  h1 .tachado{position:relative;color:var(--gris-borrador);white-space:nowrap}
+  h1 .tachado::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.07em;background:var(--azahar);transform:rotate(-1.2deg)}
+  h1 .final{color:var(--verde-botella)}
+  .caret{display:inline-block;width:.08em;height:.85em;background:var(--azahar);margin-left:.08em;vertical-align:-.08em;animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hero-sub{margin-top:2rem;max-width:46ch;font-size:1.06rem;color:var(--verde-tinta)}
+  .hero-sub a{color:inherit;text-decoration-color:var(--albero);text-underline-offset:3px}
+  .hero-meta{position:absolute;bottom:2rem;left:5vw;right:5vw;display:flex;justify-content:space-between;
+             font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);text-transform:uppercase;letter-spacing:.08em}
+
+  /* ---------- TRABAJOS: titulares ---------- */
+  section{padding:6.5rem 5vw}
+  .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--azahar);margin-bottom:2.6rem}
+  .work-row{display:grid;grid-template-columns:1fr minmax(180px,260px);gap:2rem;align-items:center;
+            padding:2.4rem 0;border-top:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+            text-decoration:none;color:inherit;transition:padding-left .25s ease}
+  .work-row:last-of-type{border-bottom:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent)}
+  .work-row:hover,.work-row:focus-visible{padding-left:1rem}
+  .work-row:hover .work-title{color:var(--azahar)}
+  .work-title{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4.4vw,3.4rem);line-height:1.05;letter-spacing:-.02em;transition:color .2s}
+  .work-desc{font-size:.95rem;color:var(--verde-tinta);margin-top:.6rem;max-width:52ch}
+  .work-tags{font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);text-transform:uppercase;letter-spacing:.06em;margin-top:.8rem}
+  .work-thumb{aspect-ratio:4/3;background:var(--verde-botella);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .work-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .work-thumb span{font-family:var(--mono);font-size:.7rem;color:var(--papel);opacity:.5;padding:1rem;text-align:center}
+
+  /* ---------- MAGNIFIC destacado ---------- */
+  .featured{background:var(--verde-botella);color:var(--papel);border-radius:14px;padding:4.5rem 5vw;margin:0 3vw}
+  .featured .eyebrow{color:var(--albero)}
+  .featured h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.02em;line-height:1.05;max-width:16ch}
+  .featured p.lede{margin-top:1.6rem;max-width:56ch;color:color-mix(in srgb,var(--papel) 82%,transparent)}
+  .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:3.2rem}
+  .featured-card{border:1px solid color-mix(in srgb,var(--papel) 22%,transparent);border-radius:8px;padding:1.5rem;transition:border-color .2s, transform .2s}
+  .featured-card:hover{border-color:var(--albero);transform:translateY(-3px)}
+  .featured-card h3{font-family:var(--display);font-weight:800;font-size:1.15rem;margin-bottom:.5rem}
+  .featured-card p{font-size:.9rem;color:color-mix(in srgb,var(--papel) 75%,transparent)}
+  .featured-card .num{font-family:var(--mono);font-size:.7rem;color:var(--albero);display:block;margin-bottom:.9rem;letter-spacing:.08em}
+
+  /* ---------- SOBRE MÍ ---------- */
+  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:start}
+  .about h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:1.4rem}
+  .about p{margin-bottom:1rem;max-width:58ch}
+  .about .playlist{background:#fff;border:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);border-radius:10px;padding:1.6rem;font-size:.92rem}
+  .about .playlist strong{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--azahar);display:block;margin-bottom:.7rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:6rem 5vw 3rem;border-radius:14px 14px 0 0;margin-top:6rem}
+  footer .big{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,9vw,7rem);letter-spacing:-.03em;line-height:.98}
+  footer .big a{color:inherit;text-decoration:none}
+  footer .big a:hover{color:var(--albero)}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:4rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .work-row{grid-template-columns:1fr;gap:1.2rem}
+    .work-thumb{order:-1;max-width:100%}
+    .about{grid-template-columns:1fr;gap:2.4rem}
+    .featured{margin:0;border-radius:0;padding:3.5rem 6vw}
+    .hero-meta{flex-direction:column;gap:.3rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Javi<br>Sendra</div>
+  <ul>
+    <li><a href="#trabajo">Trabajo</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#" lang="en">EN</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: el borrador que se corrige a sí mismo -->
+<header>
+  <p class="draft-label">titular_v1.docx → titular_v2.docx → <em>titular_FINAL_finalisimo.docx</em></p>
+  <h1>
+    Escribo <span class="tachado">bonito</span> <span class="tachado">rápido</span>
+    <span class="final">para que las cosas pasen</span><span class="caret" aria-hidden="true"></span>
+  </h1>
+  <p class="hero-sub">
+    Copywriter y creativo publicitario en <a href="#trabajo">Magnific</a> (antes Freepik).
+    De Sevilla — y si suma puntos, sí, tengo caseta en la feria.
+  </p>
+  <div class="hero-meta">
+    <span>Sevilla → Málaga → donde haga falta</span>
+    <span>ES / EN</span>
+  </div>
+</header>
+
+<!-- TRABAJO: titulares, no cajitas -->
+<section id="trabajo">
+  <p class="eyebrow">Trabajo seleccionado</p>
+
+  <a class="work-row" href="#magnific">
+    <div>
+      <div class="work-title">Magnific (antes Freepik)</div>
+      <p class="work-desc">Tres años escribiendo el cambio más grande de la compañía: rebranding, la apuesta B2B, Originals y los lanzamientos de la suite de IA.</p>
+      <p class="work-tags">Copy · Product Marketing · 2023—hoy</p>
+    </div>
+    <div class="work-thumb"><span>↳ Sustituir por visual "Be Magnific" del press kit</span></div>
+  </a>
+
+  <a class="work-row" href="#">
+    <div>
+      <div class="work-title">Pic'em</div>
+      <p class="work-desc">UX writing para ayudar al usuario a mantener su galería en orden.</p>
+      <p class="work-tags">UX Writing · Producto</p>
+    </div>
+    <div class="work-thumb"><span>↳ Thumbnail Pic'em</span></div>
+  </a>
+
+  <a class="work-row" href="#">
+    <div>
+      <div class="work-title">Vinted</div>
+      <p class="work-desc">Propuesta de funcionalidad: concepto, flujo y microcopy.</p>
+      <p class="work-tags">Concepto · UX Writing</p>
+    </div>
+    <div class="work-thumb"><span>↳ Thumbnail Vinted</span></div>
+  </a>
+</section>
+
+<!-- MAGNIFIC: entrada destacada -->
+<section class="featured" id="magnific">
+  <p class="eyebrow">Proyecto destacado</p>
+  <h2>De banco de imágenes a rival de Adobe</h2>
+  <p class="lede">
+    Desde que entré en Freepik hace casi tres años, la empresa ha cambiado de nombre, de producto,
+    de posicionamiento y de categoría. He estado dentro de cada uno de esos cambios,
+    poniéndoles palabras. Estos son los frentes:
+  </p>
+  <div class="featured-grid">
+    <div class="featured-card">
+      <span class="num">Rebranding</span>
+      <h3>Freepik is now Magnific</h3>
+      <p>El vídeo POV de lanzamiento, la adaptación de touchpoints clave y el announcement a creative partners.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">B2B</span>
+      <h3>Freepik Business</h3>
+      <p>Del brainstorming de campaña a cada mensaje del funnel. La primera vez que la marca habló a equipos, no a individuos.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">Estudio</span>
+      <h3>Magnific Originals</h3>
+      <p>Todo el copy que rodea al programa de coproducción con los mejores creadores audiovisuales del mundo.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">Producto</span>
+      <h3>Lanzamientos IA</h3>
+      <p>AI Video Generator y compañía: posts, emails y campañas para una suite que cambia cada semana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <p class="eyebrow">Sobre mí</p>
+  <div class="about">
+    <div>
+      <h2>Las palabras son lo último que se ve, pero lo primero que se piensa.</h2>
+      <p>Trabajo donde el copy se cruza con el producto, la marca y — últimamente — la IA. Me interesa menos la frase brillante que la frase que funciona, aunque cuando coinciden no digo que no.</p>
+      <p>Antes de Magnific: UX writing, publicidad y todo lo que se pueda escribir entre Sevilla y Málaga.</p>
+    </div>
+    <aside class="playlist">
+      <strong>Mientras lees esto</strong>
+      He hecho una <a href="#">playlist de Spotify</a> para acompañarte por aquí. O para que descanses un poco de ver tanto portfolio.
+    </aside>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<footer id="contacto">
+  <p class="big"><a href="mailto:hola@javisendra.com">Hablemos →</a></p>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">Spotify</a></span>
+    <span>Hecho con palabras</span>
+  </div>
+</footer>
+
+</body>
+</html>
