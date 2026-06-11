@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vans 3xtra Shoe — Javi Sendra</title>
+<title>Estate al Lory — Javi Sendra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -65,8 +65,21 @@
   .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
                border-radius:10px;overflow:hidden;background:var(--verde-botella)}
   .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .video-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+              gap:1.2rem;margin-top:2rem}
+  .video-grid .embed-video{margin-top:0}
+  .video-grid .visual-caption{margin-top:.6rem}
   .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
            margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
+
+  /* ---------- RESULTADOS ---------- */
+  .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+         gap:1.2rem;margin-top:2rem}
+  .stat{border:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+        border-radius:8px;padding:1.4rem}
+  .stat .num{font-family:var(--display);font-weight:800;font-size:2.4rem;letter-spacing:-.02em;
+             color:var(--azahar);display:block;line-height:1}
+  .stat p{font-size:.88rem;margin:.6rem 0 0;color:var(--verde-tinta)}
 
   /* ---------- PREMIOS ---------- */
   .premios{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -116,7 +129,7 @@
     .proj-section{grid-template-columns:1fr;gap:.6rem}
     .proj-section h2{position:static;grid-column:1;margin-bottom:1rem}
     .proj-section .texto{grid-column:1;grid-row:auto}
-    .proj-visual,.visual-caption,.premios,.ficha,.embed-video{grid-column:1}
+    .proj-visual,.visual-caption,.premios,.ficha,.embed-video,.stats,.video-grid{grid-column:1}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important}
@@ -138,43 +151,80 @@
 <!-- CABECERA -->
 <div class="proj-header">
   <a class="back" href="index.html#trabajo">← Volver al trabajo</a>
-  <h1>Vans 3xtra Shoe</h1>
-  <p class="proj-meta">VCCP · Vans · Cannes Lions 2017</p>
+  <h1>Estate al Lory</h1>
+  <p class="proj-meta">VCCP · Worten · Black Friday 2018</p>
   <p class="reto">
-    <strong>El reto: alargar la vida de las zapatillas de los skaters.</strong>
+    <strong>El reto: ayudar a Worten a destacar durante el Black Friday.</strong>
   </p>
-  <p class="idea">El primer pack de 3 zapatillas: dos del pie dominante, una del otro.</p>
+  <p class="idea">Asociarnos a alguien que lleva el dinero en su nombre.</p>
   <p class="reto">
-    Ser skater implica gastar más dinero del que te gustaría en zapatillas: el roce constante de la
-    zapatilla del pie dominante — con el que haces los trucos — contra la lija hace que una se rompa
-    mucho más rápido que la otra. Y los skaters acaban tirando el par entero y comprando otro,
-    cuando solo una está desgastada.
+    Worten, la cadena de retail tecnológico, necesitaba una idea que le ayudase a diferenciarse de
+    la competencia durante el Black Friday de 2018 — el periodo de ventas más agresivo del año,
+    donde todas las marcas gritan lo mismo — y aumentar sus ventas.
   </p>
 </div>
 
 <!-- LA IDEA -->
 <section class="proj-section" id="idea">
   <p class="eyebrow">La idea</p>
-  <h2>Vender zapatillas de tres en tres</h2>
+  <h2>Una canción en vez de una promo</h2>
   <div class="texto">
   <p>
-    <strong>Si el problema es que una zapatilla muere antes que la otra, la solución no es una
-    zapatilla más resistente: es una zapatilla más.</strong> Creamos Vans 3xtra Shoe, el primer pack
-    de 3 zapatillas: dos del pie dominante y una del otro, para que los skaters pudieran recambiar
-    la del pie dominante y seguir patinando sin comprar un par nuevo.
-  </p>
-  <p>
-    Una idea de producto antes que de publicidad — de ahí la doble shortlist en Cannes: una en
-    Promo & Activation y otra, la que más ilusión nos hizo, en Product Design.
+    <strong>Para comunicar el "money" que podían ahorrarse viniendo a Worten, nos asociamos al
+    rapero Lory Money.</strong> Junto a él creamos "Estate al Lory": una canción y un videoclip que
+    fueron la pieza central de la campaña más viral del Black Friday de 2018. Y lo más importante:
+    ayudó a Worten a aumentar sus ventas un 23% y a convertirse en el referente del periodo.
   </p>
   </div>
   <div class="embed-video">
-    <iframe src="https://player.vimeo.com/video/705815788" title="Vans 3xtra Shoe — case study"
+    <iframe src="https://www.youtube.com/embed/YnIX58Xje9E" title="Estate al Lory — videoclip"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">"Estate al Lory", el videoclip con Lory Money.</p>
+  <div class="stats">
+    <div class="stat"><span class="num">+23%</span><p>de aumento en ventas durante el Black Friday 2018.</p></div>
+    <div class="stat"><span class="num">#1</span><p>la campaña más viral del Black Friday de ese año.</p></div>
+    <div class="stat"><span class="num">×3</span><p>la fórmula se repitió: Estate al Lory, Lory President y Glitch Gyals.</p></div>
+  </div>
+  <div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/706045719?h=cee60455d4" title="Estate al Lory — case study"
             allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
   <p class="visual-caption">El caso, en vídeo.</p>
-  <div class="proj-visual transparente"><img src="img/vans.png" alt="Vans 3xtra Shoe — el pack de 3 zapatillas"></div>
-  <p class="visual-caption">El pack: dos del pie dominante, una del otro.</p>
+</section>
+
+<hr class="divider">
+
+<!-- LA SAGA -->
+<section class="proj-section" id="saga">
+  <p class="eyebrow">La saga</p>
+  <h2>Cuando funciona, repites</h2>
+  <div class="texto">
+  <p>
+    <strong>El éxito convirtió la campaña en estrategia.</strong> Durante las elecciones de 2019
+    repetimos con Lory para crear "Lory President" y mantener a Worten como referente del retail
+    tecnológico. Y para el Black Friday de 2019, repetimos la fórmula con Glitch Gyals.
+  </p>
+  </div>
+  <div class="video-grid">
+    <div>
+      <div class="embed-video">
+        <iframe src="https://www.youtube.com/embed/Z5gCCIvCeCQ" title="Lory President"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">"Lory President" — elecciones 2019.</p>
+    </div>
+    <div>
+      <div class="embed-video">
+        <iframe src="https://www.youtube.com/embed/a75hE5VVA6A" title="Glitch Gyals — Black Friday 2019"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">Glitch Gyals — Black Friday 2019.</p>
+    </div>
+  </div>
 </section>
 
 <hr class="divider">
@@ -185,25 +235,27 @@
   <h2>Premios y ficha técnica</h2>
   <div class="texto">
   <p>
-    La campaña consiguió doble shortlist en Cannes Lions 2017, compitiendo en dos categorías
-    distintas — la prueba de que la idea funcionaba tanto como activación como producto.
+    Dos oros y dos shortlists, repartidos entre creatividad, eficacia e influencia — exactamente
+    el triángulo que una campaña de branded content tiene que cerrar.
   </p>
   </div>
   <div class="premios">
-    <div class="premio"><span class="cert">Cannes Lions 2017</span><p>Shortlist · Promo & Activation</p></div>
-    <div class="premio"><span class="cert">Cannes Lions 2017</span><p>Shortlist · Product Design</p></div>
+    <div class="premio"><span class="cert">Premios Inspirational 2018</span><p>Oro · Estrategias de Influencia</p></div>
+    <div class="premio"><span class="cert">Chime Cymbal 2019</span><p>Oro · Best Online Content</p></div>
+    <div class="premio"><span class="cert">CdeC 2018</span><p>Shortlist y Mención · Anuario de la Creatividad</p></div>
+    <div class="premio"><span class="cert">Premios Eficacia 2018</span><p>Shortlist · Estrategias de Influencia</p></div>
   </div>
   <div class="ficha">
     <div><span>Agencia</span>VCCP Spain</div>
-    <div><span>Cliente</span>Vans</div>
+    <div><span>Cliente</span>Worten</div>
     <div><span>Director Creativo Ejecutivo</span>Beto Nahmad</div>
     <div><span>Director Creativo</span>Charlie Pérez Sauquillo</div>
     <div><span>Copy</span>Javi Sendra, Manu Gómez</div>
-    <div><span>Dirección de Arte</span>Sergio Kian, Gonzalo Arce</div>
+    <div><span>Dirección de Arte</span>Sergio Kian, Maria Prado</div>
     <div><span>Dirección de Cuentas</span>Carlota Arriols, Adrián Conrado</div>
     <div><span>Diseño</span>Daniel Sáez</div>
-    <div><span>Productora</span>The Monday Project</div>
-    <div><span>Realizador</span>Uri Segarra</div>
+    <div><span>Productora</span>Jakiens</div>
+    <div><span>Realizador</span>Marco Huertas</div>
   </div>
 </section>
 
@@ -216,7 +268,7 @@
 <!-- SIGUIENTE PROYECTO -->
 <div class="next-proj">
   <p class="eyebrow">Siguiente proyecto</p>
-  <a href="lory.html">Estate al Lory →</a>
+  <a href="#">Unbox Child Labour →</a>
 </div>
 
 <footer>
