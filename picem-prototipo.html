@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pic'em — Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#F2664B;
+    --green:#3FBF7F;
+    --blue:#7FB4F2;
+    --ink:#1A1A1A;
+    --paper:#F1F3EC;
+    --card:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);font-family:'Instrument Sans',sans-serif;color:var(--ink);
+       min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem}
+  .page-head{font-family:'IBM Plex Mono',monospace;font-size:.72rem;text-transform:uppercase;
+             letter-spacing:.08em;color:#9AA89F;margin-bottom:1rem;text-align:center}
+  .page-head a{color:#9AA89F}
+
+  /* ---------- PHONE ---------- */
+  .phone{width:min(380px,94vw);height:min(740px,86svh);background:var(--card);border-radius:38px;
+         border:10px solid var(--ink);box-shadow:0 30px 60px rgba(12,43,34,.25);
+         display:flex;flex-direction:column;overflow:hidden;position:relative}
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.1rem .6rem}
+  .logo{font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+  .logo i{font-style:normal;color:var(--coral)}
+  .counter{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.95rem}
+  .trash-btn{background:none;border:none;font-size:1.15rem;cursor:pointer;position:relative}
+  .trash-btn .badge{position:absolute;top:-6px;right:-9px;background:var(--coral);color:#fff;
+                    font-size:.6rem;font-weight:700;border-radius:99px;padding:1px 5px;font-family:'Instrument Sans'}
+
+  /* ---------- STAGE ---------- */
+  .stage{flex:1;position:relative;margin:0.4rem 1.1rem;display:flex;align-items:center;justify-content:center}
+  .photo-card{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#ddd;
+              display:flex;align-items:center;justify-content:center;flex-direction:column;
+              box-shadow:0 8px 24px rgba(0,0,0,.14);touch-action:none;user-select:none;cursor:grab}
+  .photo-card img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .photo-card .fake{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+                    flex-direction:column;gap:.6rem;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .photo-card .fake .emo{font-size:5rem}
+  .photo-card .fake .cap{font-family:'IBM Plex Mono',monospace;font-size:.72rem;text-transform:uppercase;
+                         letter-spacing:.08em;background:rgba(0,0,0,.35);padding:.25rem .7rem;border-radius:99px}
+  .stamp{position:absolute;top:1.2rem;font-family:'IBM Plex Mono',monospace;font-weight:500;
+         font-size:1.4rem;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .9rem;
+         border:4px solid;border-radius:10px;opacity:0;transform:rotate(-12deg);pointer-events:none}
+  .stamp.trash{left:1.2rem;color:var(--coral);border-color:var(--coral)}
+  .stamp.keep{right:1.2rem;color:var(--green);border-color:var(--green);transform:rotate(12deg)}
+
+  /* ---------- ACTIONS ---------- */
+  .actions{display:flex;justify-content:center;gap:1.1rem;padding:1rem 0 .6rem}
+  .act{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;font-size:1.5rem;
+       display:flex;align-items:center;justify-content:center;color:#fff;
+       box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .12s}
+  .act:active{transform:scale(.88)}
+  .act.undo{background:#fff;color:var(--ink);border:2px solid #E5E5E5;width:48px;height:48px;font-size:1.1rem;align-self:center}
+  .act.del{background:var(--coral)}
+  .act.skip{background:var(--blue);width:48px;height:48px;font-size:1rem;align-self:center}
+  .act.keep{background:var(--green)}
+
+  .empty-trash{margin:0 1.1rem 1.1rem;padding:.8rem;border:1.5px solid var(--coral);color:var(--coral);
+               background:#fff;border-radius:12px;font-weight:600;font-size:.92rem;cursor:pointer;
+               font-family:'Instrument Sans'}
+  .empty-trash:disabled{opacity:.35;cursor:default}
+
+  .toast{position:absolute;bottom:9.2rem;left:50%;transform:translateX(-50%) translateY(10px);
+         background:var(--ink);color:#fff;font-size:.85rem;padding:.55rem 1rem;border-radius:99px;
+         opacity:0;transition:.25s;pointer-events:none;white-space:nowrap;max-width:90%;
+         text-overflow:ellipsis;overflow:hidden;z-index:30}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ---------- OVERLAYS ---------- */
+  .overlay{position:absolute;inset:0;background:rgba(255,255,255,.96);display:flex;flex-direction:column;
+           align-items:center;justify-content:center;text-align:center;padding:2rem;gap:1rem;z-index:5}
+  .overlay h2{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+  .overlay h2 .c{color:var(--coral)}
+  .overlay p{color:#555;font-size:.95rem;max-width:26ch}
+  .btn{background:var(--coral);color:#fff;border:none;border-radius:12px;padding:.85rem 1.6rem;
+       font-weight:600;font-size:1rem;cursor:pointer;font-family:'Instrument Sans'}
+  .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid #E0E0E0}
+  .hidden{display:none!important}
+
+  /* modal */
+  .modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;
+            justify-content:center;z-index:10;padding:1.4rem}
+  .modal{background:#fff;border:2px solid var(--coral);border-radius:16px;padding:1.6rem;text-align:center;max-width:300px}
+  .modal h3{font-size:1.05rem;margin-bottom:.6rem}
+  .modal p{font-size:.85rem;color:#555;margin-bottom:1.2rem;font-style:italic}
+  .modal .btn{width:100%;margin-bottom:.5rem}
+</style>
+</head>
+<body>
+
+<p class="page-head">Pic'em · prototipo interactivo · <a href="picem.html">← volver al case study</a></p>
+
+<div class="phone">
+
+  <!-- ONBOARDING -->
+  <div class="overlay" id="onboarding">
+    <div class="logo" style="font-size:1.6rem">pic<i>'</i>em<i>!</i></div>
+    <h2>B*tch, you better be <span class="c">cleaning your gallery!</span> 💅🏽</h2>
+    <p>30 photos a day. You swipe, you decide who lives. We just bring the attitude.</p>
+    <button class="btn" onclick="startApp()">Let's clean</button>
+    <button class="btn ghost" onclick="filePicker.click()">Add my photos</button>
+  </div>
+
+  <!-- DONE -->
+  <div class="overlay hidden" id="done">
+    <h2>30/30. Your gallery just <span class="c">exhaled</span> ✨</h2>
+    <p>Got 3 minutes tomorrow? Got a cleaner gallery. That's the deal.</p>
+    <button class="btn" onclick="resetDay()">One more round</button>
+  </div>
+
+  <!-- EMPTY -->
+  <div class="overlay hidden" id="empty">
+    <h2>Nothing left to <span class="c">judge</span> 👀</h2>
+    <p>Suspiciously clean. Add your photos and let's gossip about them.</p>
+    <button class="btn" onclick="filePicker.click()">Add my photos</button>
+  </div>
+
+  <!-- TRASH MODAL -->
+  <div class="modal-bg hidden" id="trashModal">
+    <div class="modal">
+      <h3>You're about to delete <span id="trashCount">0</span> items…</h3>
+      <p>Like Katy Perry's "Dark Horse" wisely said:<br>"There's no going back."</p>
+      <button class="btn" onclick="emptyTrash()">Delete</button>
+      <button class="btn ghost" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="topbar">
+    <span class="logo">pic<i>'</i>em<i>!</i></span>
+    <span class="counter"><span id="count">0</span> / 30</span>
+    <button class="trash-btn" onclick="openModal()">🗑️<span class="badge" id="badge">0</span></button>
+  </div>
+
+  <div class="stage" id="stage"></div>
+
+  <div class="actions">
+    <button class="act undo" onclick="undo()" title="Undo">↩</button>
+    <button class="act del" onclick="swipe(-1)" title="Delete">✕</button>
+    <button class="act skip" onclick="skip()" title="Skip">SKIP</button>
+    <button class="act keep" onclick="swipe(1)" title="Keep">✓</button>
+  </div>
+
+  <button class="empty-trash" id="emptyBtn" onclick="openModal()" disabled>Empty trash (0 items)</button>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<input type="file" id="filePicker" accept="image/*" multiple class="hidden">
+
+<script>
+// ---------- DEMO GALLERY (fake photos: gradient + emoji + caption) ----------
+const demo = [
+  ['#FFB199,#FF6B6B','🤳','selfie #847'],['#FFB199,#FF6B6B','🤳','selfie #848 (same one)'],
+  ['#A8E6CF,#3FBF7F','📸','screenshot · monday'],['#C3B1E1,#7F6BF2','🐸','meme from 2023'],
+  ['#FFE29A,#FFA751','🍝','blurry pasta'],['#9AD0EC,#1A73E8','📄','wifi password pic'],
+  ['#F6D6FF,#E27BF2','🎫','expired ticket'],['#D4F1F4,#75CFB8','🏖️','beach (the good one)'],
+  ['#FFD3B6,#FF8C61','🐕','someone else\'s dog'],['#E8E8E8,#BDBDBD','⬜','accidental pocket pic'],
+  ['#B8E0D2,#6BA292','🧾','receipt you "needed"'],['#FAD0C4,#FFD1FF','💅','nails check'],
+  ['#C9FFBF,#FFAFBD','🎂','cake (whose birthday?)'],['#A1C4FD,#C2E9FB','☁️','sky pic #56'],
+  ['#FBC2EB,#A6C1EE','🪩','party blur'],['#FDCBF1,#E6DEE9','👯','duplicated x4'],
+  ['#FF9A9E,#FECFEF','📱','screenshot of a screenshot'],['#84FAB0,#8FD3F4','🥗','salad (never posted)'],
+  ['#FFC3A0,#FFAFBD','🌅','sunset, allegedly'],['#D299C2,#FEF9D7','🧦','why is this here'],
+];
+let deck=[], trash=[], kept=[], done=0, history=[];
+
+function buildDeck(){
+  deck=[];
+  const pool=[...demo].sort(()=>Math.random()-.5);
+  for(let i=0;i<30;i++){const d=pool[i%pool.length];deck.push({type:'fake',g:d[0],emo:d[1],cap:d[2],id:i});}
+}
+function render(){
+  const stage=document.getElementById('stage');
+  stage.innerHTML='';
+  // top 3 cards
+  deck.slice(0,3).reverse().forEach((c,idx,arr)=>{
+    const el=document.createElement('div');
+    el.className='photo-card';
+    const depth=arr.length-1-idx;
+    el.style.transform=`scale(${1-depth*.04}) translateY(${depth*10}px)`;
+    el.style.zIndex=10-depth;
+    if(c.type==='img'){el.innerHTML=`<img src="${c.src}" alt="">`;}
+    else{el.style.background=`linear-gradient(135deg,${c.g})`;
+         el.innerHTML=`<div class="fake"><span class="emo">${c.emo}</span><span class="cap">${c.cap}</span></div>`;}
+    el.innerHTML+=`<span class="stamp trash">trash</span><span class="stamp keep">keep</span>`;
+    if(depth===0) addDrag(el);
+    stage.appendChild(el);
+  });
+  document.getElementById('count').textContent=done;
+  const t=trash.length;
+  document.getElementById('badge').textContent=t;
+  const btn=document.getElementById('emptyBtn');
+  btn.textContent=`Empty trash (${t} item${t===1?'':'s'})`;
+  btn.disabled=t===0;
+  if(done>=30){show('done');}
+  else if(deck.length===0){show('empty');}
+}
+function addDrag(el){
+  let sx=0,dx=0,drag=false;
+  el.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;el.setPointerCapture(e.pointerId);el.style.transition='none';});
+  el.addEventListener('pointermove',e=>{
+    if(!drag)return;dx=e.clientX-sx;
+    el.style.transform=`translateX(${dx}px) rotate(${dx/14}deg)`;
+    el.querySelector('.stamp.trash').style.opacity=dx<-30?Math.min(1,-dx/100):0;
+    el.querySelector('.stamp.keep').style.opacity=dx>30?Math.min(1,dx/100):0;
+  });
+  el.addEventListener('pointerup',()=>{
+    drag=false;el.style.transition='transform .25s';
+    if(dx<-90)swipe(-1,el);else if(dx>90)swipe(1,el);
+    else el.style.transform='';
+    dx=0;
+  });
+}
+function swipe(dir,el){
+  if(deck.length===0)return;
+  const card=deck.shift();
+  history.push({card,dir});
+  if(dir<0){trash.push(card);toast("Gone. Never liked it anyway 💅");}
+  else{kept.push(card);toast("A keeper. Good eye.");}
+  done++;
+  if(el){el.style.transform=`translateX(${dir*500}px) rotate(${dir*25}deg)`;setTimeout(render,180);}
+  else render();
+}
+function skip(){
+  if(deck.length<2){toast("Nothing to skip, b*tch 💅");return;}
+  deck.push(deck.shift());
+  toast("We'll talk about that one later.");
+  render();
+}
+function undo(){
+  const last=history.pop();
+  if(!last){toast("Nothing to undo. You're decisive, respect.");return;}
+  if(last.dir<0)trash.pop();else kept.pop();
+  deck.unshift(last.card);done--;
+  toast("Changed your mind? Happens to the best of us.");
+  render();
+}
+function openModal(){
+  if(trash.length===0)return;
+  document.getElementById('trashCount').textContent=trash.length;
+  document.getElementById('trashModal').classList.remove('hidden');
+}
+function closeModal(){document.getElementById('trashModal').classList.add('hidden');}
+function emptyTrash(){
+  trash=[];closeModal();render();
+  toast("Deleted. Katy would be proud. 🐎");
+}
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1600);
+}
+function show(id){['onboarding','done','empty'].forEach(o=>document.getElementById(o).classList.add('hidden'));
+  if(id)document.getElementById(id).classList.remove('hidden');}
+function startApp(){show(null);if(deck.length===0)buildDeck();render();}
+function resetDay(){done=0;history=[];buildDeck();show(null);render();}
+
+// user photos
+document.getElementById('filePicker').addEventListener('change',e=>{
+  const files=[...e.target.files].slice(0,30);
+  if(files.length===0)return;
+  deck=[];done=0;trash=[];kept=[];history=[];
+  let loaded=0;
+  files.forEach((f,i)=>{
+    const r=new FileReader();
+    r.onload=ev=>{deck.push({type:'img',src:ev.target.result,id:'u'+i});
+      loaded++;if(loaded===files.length){show(null);render();toast(`${files.length} photos in. Let's judge. 💅`);}};
+    r.readAsDataURL(f);
+  });
+});
+
+buildDeck();
+</script>
+</body>
+</html>
