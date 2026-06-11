@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnific (antes Freepik) — Javi Sendra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  .logo a{color:inherit;text-decoration:none}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- CABECERA DE PROYECTO ---------- */
+  .proj-header{padding:9rem 5vw 3rem;max-width:1100px}
+  .back{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;
+        color:var(--gris-borrador);text-decoration:none;display:inline-block;margin-bottom:2rem}
+  .back:hover{color:var(--azahar)}
+  .proj-header h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6.5vw,5.4rem);
+                  line-height:1.02;letter-spacing:-.025em}
+  .proj-meta{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+             color:var(--gris-borrador);margin-top:1.4rem}
+  .reto{margin-top:2.4rem;font-size:1.15rem;color:var(--verde-tinta);max-width:60ch}
+  .reto strong{color:var(--verde-botella)}
+
+  /* ---------- SECCIONES ---------- */
+  .proj-section{padding:4.5rem 5vw;max-width:1100px}
+  .proj-section .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1.4rem}
+  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,3rem);
+                   line-height:1.08;letter-spacing:-.02em;margin-bottom:1.4rem;max-width:22ch}
+  .proj-section p{max-width:62ch;margin-bottom:1rem;color:var(--verde-tinta)}
+  .proj-visual{margin-top:2.4rem;border-radius:10px;overflow:hidden}
+  .proj-visual img{width:100%;display:block}
+  .proj-visual.transparente{border-radius:0;overflow:visible}
+  .visual-caption{font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
+                  margin-top:.8rem;letter-spacing:.04em}
+  .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
+           margin:0 5vw;max-width:1100px}
+
+  /* ---------- SIGUIENTE PROYECTO ---------- */
+  .next-proj{padding:5rem 5vw 7rem;max-width:1100px}
+  .next-proj .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                      letter-spacing:.1em;color:var(--gris-borrador);margin-bottom:.8rem}
+  .next-proj a{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.5vw,3.4rem);
+               letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .next-proj a:hover{color:var(--azahar)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:3rem 5vw;border-radius:14px 14px 0 0}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .proj-header{padding-top:7rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html">Javi<br>Sendra</a></div>
+  <ul>
+    <li><a href="index.html#trabajo">Trabajo</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- CABECERA -->
+<div class="proj-header">
+  <a class="back" href="index.html#trabajo">← Volver al trabajo</a>
+  <h1>Magnific (formerly Freepik)</h1>
+  <p class="proj-meta">Copy · Product Marketing · Agosto 2023 — Actualidad</p>
+  <p class="reto">
+    <strong>El reto: convertir a Magnific en la principal plataforma que integra todas las soluciones
+    creativas de diseño (Stock + IA + Edit) en un único lugar.</strong>
+  </p>
+  <p class="reto">
+    Desde que entré en Freepik hace dos años como copywriter, la empresa ha cambiado de nombre,
+    de producto, de posicionamiento y de categoría. Lo que empezó siendo un banco de imágenes
+    nacido en Málaga compite hoy contra Higgsfield, Midjourney y Adobe. El objetivo siempre ha sido
+    el mismo: convertir Magnific en la plataforma creativa de referencia. El lugar donde cualquier
+    creativo puede inspirarse, crear y entregar un producto final sin saltar de una herramienta a otra.
+    Estos son algunos de los últimos proyectos en los que he estado trabajando.
+  </p>
+</div>
+
+<!-- REBRANDING -->
+<section class="proj-section" id="rebranding">
+  <p class="eyebrow">Rebranding</p>
+  <h2>De Freepik a Magnific</h2>
+  <p>
+    En 2026, Freepik dejó de ser Freepik. El rebranding a Magnific no fue solo un cambio de nombre —
+    fue una redefinición completa de lo que la empresa es, hace y comunica. Un proyecto que sigue
+    en construcción hoy, adaptando cada touchpoint, cada tono y cada mensaje a una nueva
+    personalidad de marca.
+  </p>
+  <p>
+    Mi rol no fue liderar el rebranding, pero sí fui parte activa de él: escribí el vídeo POV de
+    lanzamiento, adapté comunicaciones clave como Magnific Originals y Freepik Business a la nueva
+    identidad, y co-redacté el announcement dirigido a nuestros creative partners. Cada pieza,
+    un ejercicio de traducir una nueva personalidad de marca en palabras concretas, para
+    audiencias distintas.
+  </p>
+  <div class="proj-visual"><img src="img/rewrite.jpg" alt="Rewrite the rules of creativity — visual del press kit de Magnific"></div>
+  <p class="visual-caption">Key message del press kit del rebranding.</p>
+  <!-- TODO: incrustar aquí el tweet con el vídeo POV -->
+</section>
+
+<hr class="divider">
+
+<!-- FREEPIK BUSINESS -->
+<section class="proj-section" id="business">
+  <p class="eyebrow">B2B</p>
+  <h2>Freepik Business</h2>
+  <p>
+    Uno de los principales cambios con el rebranding fue el target de la compañía. Freepik había
+    sido un producto tradicionalmente B2C, enfocado en diseñadores y creativos como usuario final.
+    Business fue, junto a Enterprise, la apuesta de la empresa por entrar en el territorio de
+    equipos, agencias, startups y productoras que necesitan una solución creativa compartida.
+  </p>
+  <p>
+    Un cambio de audiencia implica un cambio de todo lo demás: tono, argumentario, canales, y la
+    forma en que construyes confianza con alguien que no compra solo para sí mismo, sino para su
+    equipo. En este proyecto, junto a mi squad, estuve implicado desde la fase de brainstorming de
+    campaña — conceptos visuales, narrativa, keyvisuals, key messages — hasta la adaptación de esos
+    mensajes a cada medio y momento del funnel, desde awareness hasta conversión. Para mí, fue el
+    proyecto donde más aprendí sobre cómo se construye una campaña B2B de cero.
+  </p>
+  <div class="proj-visual transparente"><img src="img/business-mockup.png" alt="Emails de la campaña de Freepik Business"></div>
+  <p class="visual-caption">Dos emails del funnel de Freepik Business: lanzamiento del plan y upgrade a anual.</p>
+</section>
+
+<hr class="divider">
+
+<!-- MAGNIFIC ORIGINALS -->
+<section class="proj-section" id="originals">
+  <p class="eyebrow">Estudio</p>
+  <h2>Magnific Originals</h2>
+  <p>
+    Magnific Originals es la apuesta más ambiciosa de la compañía: un estudio propio que coproduce,
+    junto a los mejores creadores audiovisuales del mundo, proyectos hechos íntegramente con la
+    Magnific Creative Suite. El primero en salir fue <em>The Chronicles of Bone</em>, el universo
+    de fantasía oscura de Kavan Cardoza, que acumula millones de visualizaciones.
+  </p>
+  <p>
+    El trabajo que brilla aquí es el de los creadores — y así debe ser. Mi trabajo fue darle
+    palabras al programa: escribí todo el copy que rodea a Originals, desde la landing que explica
+    qué es y a quién va dirigido, hasta los blog posts, emails y notificaciones con los que lo
+    lanzamos al mundo. El reto: comunicar algo que no existía antes — ni en Magnific ni casi en la
+    industria — y hacer que un cineasta entienda en una landing por qué querría coproducir con una
+    plataforma de IA.
+  </p>
+  <div class="proj-visual transparente"><img src="img/originals-mockup.png" alt="Landing de Magnific Originals"></div>
+  <p class="visual-caption">La landing de Magnific Originals: "Series, shorts & movies. Talent directed, powered by AI."</p>
+  <!-- TODO: incrustar aquí el tráiler de The Chronicles of Bone -->
+</section>
+
+<hr class="divider">
+
+<!-- LANZAMIENTOS IA -->
+<section class="proj-section" id="lanzamientos">
+  <p class="eyebrow">Producto</p>
+  <h2>Lanzamientos de la suite de IA</h2>
+  <p>
+    En una plataforma que integra los mejores modelos de imagen, vídeo y audio del mercado, hay
+    algo nuevo que comunicar casi cada semana. Junto a mi equipo, he trabajado el copy de
+    lanzamiento de herramientas y funcionalidades de la suite — del AI Video Generator en adelante —
+    en posts, emails y campañas que tienen que explicar tecnología compleja en el tiempo que dura
+    un scroll.
+  </p>
+  <!-- TODO: incrustar aquí los posts de Twitter/X de los lanzamientos -->
+</section>
+
+<!-- SIGUIENTE PROYECTO -->
+<div class="next-proj">
+  <p class="eyebrow">Siguiente proyecto</p>
+  <a href="#">Pic'em →</a>
+</div>
+
+<footer>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="index.html">javisendra</a></span>
+    <span>Hecho con palabras</span>
+  </div>
+</footer>
+
+</body>
+</html>
