@@ -63,6 +63,15 @@
   .proj-visual.transparente{border-radius:0;overflow:visible}
   .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
                   margin-top:.8rem;letter-spacing:.04em}
+  .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
+               border-radius:10px;overflow:hidden;background:var(--verde-botella)}
+  .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .proto-btns{grid-column:1/-1;display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+  .proto-btn{font-family:var(--body);font-weight:600;font-size:.95rem;text-decoration:none;
+             padding:.85rem 1.5rem;border-radius:10px;background:var(--azahar);color:#fff;transition:transform .15s}
+  .proto-btn:hover{transform:translateY(-2px)}
+  .proto-btn.ghost{background:transparent;color:var(--verde-botella);
+                   border:1.5px solid color-mix(in srgb,var(--verde-botella) 35%,transparent)}
   .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
            margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
 
@@ -254,7 +263,15 @@
     versiones del mismo producto, separadas por unos años y por un cambio completo en cómo se
     construyen los prototipos.
   </p>
-  <!-- TODO: enlazar aquí el prototipo hecho con Claude y el prototipo original de Figma -->
+  </div>
+  <div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/787972898" title="Pic'em — presentación del proyecto"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Vídeo de presentación del proyecto.</p>
+  <div class="proto-btns">
+    <a class="proto-btn" href="picem-prototipo.html">Probar el prototipo interactivo →</a>
+    <!-- TODO: añadir aquí el enlace al prototipo original de Figma -->
   </div>
 </section>
 
