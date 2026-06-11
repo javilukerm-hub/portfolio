@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sé infiel a ti mismo — Javi Sendra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  .logo a{color:inherit;text-decoration:none}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- CABECERA DE PROYECTO ---------- */
+  .proj-header{padding:9rem 5vw 3rem;max-width:1150px;margin-inline:auto}
+  .back{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;
+        color:var(--gris-borrador);text-decoration:none;display:inline-block;margin-bottom:2rem}
+  .back:hover{color:var(--azahar)}
+  .proj-header h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6.5vw,5.4rem);
+                  line-height:1.02;letter-spacing:-.025em}
+  .proj-meta{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+             color:var(--gris-borrador);margin-top:1.4rem}
+  .reto{margin-top:2.4rem;font-size:1.15rem;color:var(--verde-tinta);max-width:60ch}
+  .reto strong{color:var(--verde-botella)}
+  .idea{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.5rem);
+        line-height:1.15;letter-spacing:-.02em;color:var(--verde-botella);
+        max-width:26ch;margin-top:2.8rem;padding-left:1.4rem;
+        border-left:4px solid var(--azahar)}
+
+  /* ---------- SECCIONES ---------- */
+  .proj-section{padding:4.5rem 5vw;max-width:1150px;margin-inline:auto;
+                display:grid;grid-template-columns:minmax(240px,.9fr) 1.4fr;gap:1rem 4rem;align-items:start}
+  .proj-section .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1rem;grid-column:1}
+  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.7rem);
+                   line-height:1.08;letter-spacing:-.02em;grid-column:1;position:sticky;top:6rem}
+  .proj-section .texto{grid-column:2;grid-row:1/span 3}
+  .proj-section p{max-width:62ch;margin-bottom:1rem;color:var(--verde-tinta)}
+  .proj-visual{grid-column:1/-1;margin-top:2rem;border-radius:10px;overflow:hidden}
+  .proj-visual img{width:100%;display:block}
+  .proj-visual.transparente{border-radius:0;overflow:visible}
+  .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
+                  margin-top:.8rem;letter-spacing:.04em}
+  .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
+               border-radius:10px;overflow:hidden;background:var(--verde-botella)}
+  .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .video-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+              gap:1.2rem;margin-top:2rem}
+  .video-grid .embed-video{margin-top:0}
+  .video-grid .visual-caption{margin-top:.6rem}
+  .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
+           margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
+
+  /* ---------- RESULTADOS ---------- */
+  .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+         gap:1.2rem;margin-top:2rem}
+  .stat{border:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+        border-radius:8px;padding:1.4rem}
+  .stat .num{font-family:var(--display);font-weight:800;font-size:2.4rem;letter-spacing:-.02em;
+             color:var(--azahar);display:block;line-height:1}
+  .stat p{font-size:.88rem;margin:.6rem 0 0;color:var(--verde-tinta)}
+
+  /* ---------- PREMIOS ---------- */
+  .premios{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+           gap:1.2rem;margin-top:2rem}
+  .premio{border:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+          border-radius:8px;padding:1.4rem}
+  .premio .cert{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;
+                letter-spacing:.08em;color:var(--azahar);display:block;margin-bottom:.6rem}
+  .premio p{font-family:var(--display);font-weight:800;font-size:1.1rem;margin:0;line-height:1.25;
+            color:var(--verde-botella)}
+
+  /* ---------- FICHA TÉCNICA ---------- */
+  .ficha{grid-column:1/-1;margin-top:2rem;display:grid;
+         grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.4rem 2rem;
+         font-size:.9rem;color:var(--verde-tinta)}
+  .ficha div{padding:.5rem 0;border-top:1px solid color-mix(in srgb,var(--verde-botella) 12%,transparent)}
+  .ficha span{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
+              letter-spacing:.06em;color:var(--gris-borrador);display:block}
+
+  /* ---------- CTA FINAL ---------- */
+  .proj-cta{padding:4rem 5vw 1rem;max-width:1150px;margin-inline:auto}
+  .proj-cta .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--azahar);margin-bottom:.8rem}
+  .proj-cta a{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);
+              letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .proj-cta a:hover{color:var(--azahar)}
+
+  /* ---------- SIGUIENTE PROYECTO ---------- */
+  .next-proj{padding:5rem 5vw 7rem;max-width:1150px;margin-inline:auto}
+  .next-proj .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                      letter-spacing:.1em;color:var(--gris-borrador);margin-bottom:.8rem}
+  .next-proj a{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.5vw,3.4rem);
+               letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .next-proj a:hover{color:var(--azahar)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:3rem 5vw;border-radius:14px 14px 0 0}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .proj-header{padding-top:7rem}
+    .proj-section{grid-template-columns:1fr;gap:.6rem}
+    .proj-section h2{position:static;grid-column:1;margin-bottom:1rem}
+    .proj-section .texto{grid-column:1;grid-row:auto}
+    .proj-visual,.visual-caption,.premios,.ficha,.embed-video,.stats,.video-grid{grid-column:1}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html">Javi<br>Sendra</a></div>
+  <ul>
+    <li><a href="index.html#trabajo">Trabajo</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- CABECERA -->
+<div class="proj-header">
+  <a class="back" href="index.html#trabajo">← Volver al trabajo</a>
+  <h1>Sé infiel a ti mismo</h1>
+  <p class="proj-meta">After Madrid · San Miguel Magna</p>
+  <p class="reto">
+    <strong>El reto: reposicionar Magna de San Miguel como la cerveza de la Gen-Z.</strong>
+  </p>
+  <p class="idea">Celebrar las contradicciones de una generación infiel a sí misma.</p>
+  <p class="reto">
+    San Miguel quería reposicionar Magna, una cerveza única por tener un carácter premium pero
+    hecha para disfrutarse en el día a día. Una contradicción de producto que pedía a gritos una
+    contradicción de campaña.
+  </p>
+</div>
+
+<!-- LA IDEA -->
+<section class="proj-section" id="idea">
+  <p class="eyebrow">La idea</p>
+  <h2>Una campaña infiel a lo que suele ser una campaña</h2>
+  <div class="texto">
+  <p>
+    <strong>A partir del carácter contradictorio de Magna, nos dirigimos a una de las generaciones
+    con más contradicciones: la Gen-Z.</strong> Con el concepto "Sé infiel a ti mismo" creamos una
+    campaña infiel a lo que suele ser una campaña de publicidad. A través de piezas de vídeo,
+    visuales y activaciones, celebramos a todas esas personas que disfrutan de sus contradicciones —
+    con una cerveza infiel a sí misma.
+  </p>
+  </div>
+  <div class="proj-visual transparente"><img src="img/magna.png" alt="Sé infiel a ti mismo — campaña para San Miguel Magna"></div>
+  <p class="visual-caption">"Sé infiel a ti mismo", el concepto de campaña.</p>
+  <div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/705843731" title="Sé infiel a ti mismo — case study"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">El caso, en vídeo.</p>
+  <div class="video-grid">
+    <div>
+      <div class="embed-video">
+        <iframe src="https://player.vimeo.com/video/706042189" title="Sé infiel a ti mismo — spot ecologista"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">El spot "ecologista".</p>
+    </div>
+    <div>
+      <div class="embed-video">
+        <iframe src="https://player.vimeo.com/video/706537709" title="Sé infiel a ti mismo — spot capillita"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">El spot "capillita".</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FICHA -->
+<section class="proj-section" id="ficha">
+  <p class="eyebrow">Créditos</p>
+  <h2>Ficha técnica</h2>
+  <div class="texto">
+  <p>
+    Un equipo grande para una campaña que tocó vídeo, visuales y activaciones — con el copy
+    firmado junto a Elena González.
+  </p>
+  </div>
+  <div class="ficha">
+    <div><span>Agencia</span>After Madrid</div>
+    <div><span>Cliente</span>San Miguel Magna</div>
+    <div><span>CEO</span>Jorge Solís</div>
+    <div><span>Directores Creativos Ejecutivos</span>Charlie Pérez Sauquillo, Juanjo Casañas</div>
+    <div><span>Copy</span>Javi Sendra, Elena González</div>
+    <div><span>Dirección de Arte</span>Esther Sibón, Juan Ferrer, Isabel Cristóbal, Diana Sánchez</div>
+    <div><span>Dirección de Planning</span>Agnès Riba, Patricia Rozano</div>
+    <div><span>Dirección de Cuentas</span>Esther Carmona</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="proj-cta">
+  <p class="eyebrow">¿Tienes un reto parecido?</p>
+  <a href="mailto:hola@javisendra.com">Hablemos →</a>
+</div>
+
+<!-- SIGUIENTE PROYECTO -->
+<div class="next-proj">
+  <p class="eyebrow">Vuelta al principio</p>
+  <a href="magnific.html">Magnific (antes Freepik) →</a>
+</div>
+
+<footer>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="index.html">javisendra</a></span>
+    <span>Hecho con palabras</span>
+  </div>
+</footer>
+
+</body>
+</html>
