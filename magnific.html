@@ -74,6 +74,12 @@
   .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
                border-radius:10px;overflow:hidden;background:var(--verde-botella)}
   .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .video-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+              gap:1.2rem;margin-top:2rem}
+  .video-grid .embed-video{margin-top:0}
+  .video-grid .visual-caption{margin-top:.6rem}
+  .subsec{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;
+          letter-spacing:.1em;color:var(--azahar);margin-top:3rem;margin-bottom:-.5rem}
   .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
            margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
 
@@ -252,13 +258,37 @@
     dura un scroll.
   </p>
   </div>
-  <!-- TODO: incrustar aquí los posts de Twitter/X de los lanzamientos -->
+  <p class="subsec">Lanzamientos de producto</p>
+  <div class="embed-video">
+    <iframe src="https://www.youtube.com/embed/h1E2OwlytBQ" title="Freepik Spaces"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Freepik Spaces: el lienzo colaborativo donde equipos crean juntos.</p>
+  <div class="video-grid">
+    <div>
+      <div class="embed-video">
+        <iframe src="https://www.youtube.com/embed/kDBdqhn6vXg" title="Wan 2.5"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">Wan 2.5: el lanzamiento de uno de los modelos de vídeo de la suite.</p>
+    </div>
+    <div></div>
+  </div>
+  <p class="subsec">Tutoriales para profesionales</p>
+  <div class="embed-video">
+    <iframe src="https://www.youtube.com/embed/nEHJrGB84NA" title="Tutorial — caso de uso profesional"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Uno de los tutoriales de casos de uso: acercar la plataforma al trabajo real de los profesionales.</p>
 </section>
 
 <!-- CTA -->
 <div class="proj-cta">
   <p class="eyebrow">¿Tienes un reto parecido?</p>
-  <a href="javiersendraguinea@gmail.com">Hablemos →</a>
+  <a href="mailto:javiersendraguinea@gmail.com">Hablemos →</a>
 </div>
 
 <!-- SIGUIENTE PROYECTO -->
