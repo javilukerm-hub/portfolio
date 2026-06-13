@@ -17,6 +17,7 @@
   <meta name="twitter:image" content="https://javisendraguinea.com/img/og-image.jpg">
   <meta name="twitter:title" content="IA Lab — Javi Sendra">
   <meta name="twitter:description" content="Lo que hago cuando nadie mira: proyectos personales escritos, dirigidos y producidos de principio a fin con IA generativa. El corto "El desagüe" y la campaña Airegin Beer.">
+
 <title>IA Lab — Javi Sendra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -116,6 +117,14 @@
   .gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
            gap:1rem;margin-top:2rem}
   .gallery img{width:100%;border-radius:8px;display:block}
+  .embed-ig{grid-column:1/-1;margin-top:2rem;display:flex;justify-content:center}
+  .embed-ig iframe{border-radius:10px;max-width:100%;background:#fff}
+  .link-btns{grid-column:1/-1;display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+  .link-btn{font-family:var(--body);font-weight:600;font-size:.95rem;text-decoration:none;
+            padding:.85rem 1.5rem;border-radius:10px;background:var(--azahar);color:#fff;transition:transform .15s}
+  .link-btn:hover{transform:translateY(-2px)}
+  .link-btn.ghost{background:transparent;color:var(--verde-botella);
+                  border:1.5px solid color-mix(in srgb,var(--verde-botella) 35%,transparent)}
   /* ---------- CTA FINAL ---------- */
   .proj-cta{padding:4rem 5vw 1rem;max-width:1150px;margin-inline:auto}
   .proj-cta .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
@@ -168,15 +177,15 @@
 <!-- CABECERA -->
 <div class="proj-header">
   <a class="back" href="index.html#trabajo">← Volver al trabajo</a>
-  <h1>IA Lab</h1>
-  <p class="proj-meta">Proyectos personales · IA generativa</p>
+  <h1>Sin brief</h1>
+  <p class="proj-meta">Proyectos personales · Lo que hago cuando nadie me lo pide</p>
   <p class="reto">
     <strong>Lo que hago cuando nadie mira.</strong>
   </p>
-  <p class="idea">La IA no es solo mi trabajo: es donde experimento.</p>
+  <p class="idea">Lo que hago cuando nadie me lo pide.</p>
   <p class="reto">
-    Proyectos personales escritos, dirigidos y producidos por mí de principio a fin con
-    herramientas de IA generativa. Sin brief, sin cliente, sin más límite que la curiosidad.
+    Música, redes, escritura y experimentos con IA. Proyectos sin cliente y sin brief, donde
+    pruebo ideas, formatos y herramientas solo por las ganas de hacerlo.
   </p>
 </div>
 
@@ -219,6 +228,53 @@
     <img src="img/airegin-3.jpg" alt="Airegin Beer — Live between the lines, bar">
   </div>
   <p class="visual-caption">La campaña "Live between the lines", en tres ambientes.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ANIMO PANICO -->
+<section class="proj-section" id="animo-panico">
+  <p class="eyebrow">Música & RRSS</p>
+  <h2>Animo Pánico</h2>
+  <div class="texto">
+  <p>
+    <strong>Mi grupo de música — y mi campo de pruebas para redes sociales.</strong> Con Animo
+    Pánico tengo un par de temas publicados, pero sobre todo es donde experimento con ideas y
+    formatos para redes: lo que me mantiene afilado en un terreno donde las marcas se juegan la
+    atención cada día.
+  </p>
+  <p>
+    Para la canción <em>"Lo que pasó en el asiento de la parte de atrás"</em> hicimos este
+    videoclip, una de esas ideas que salen cuando no hay brief que te frene.
+  </p>
+  </div>
+  <div class="embed-ig">
+    <iframe src="https://www.instagram.com/p/DITVomuN3F5/embed" width="400" height="600"
+            frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Videoclip de "Lo que pasó en el asiento de la parte de atrás" — en Instagram.</p>
+  <div class="link-btns">
+    <a class="link-btn" href="https://open.spotify.com/intl-es/track/2nFNLnUC4DpAr2boqLWoAz?si=d81ca22e26bf4b94" target="_blank" rel="noopener">Escuchar en Spotify →</a>
+    <a class="link-btn ghost" href="https://www.instagram.com/animopanico/" target="_blank" rel="noopener">Ver Animo Pánico en Instagram →</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- MEDIUM -->
+<section class="proj-section" id="escritura">
+  <p class="eyebrow">Escritura</p>
+  <h2>Artículos y relatos</h2>
+  <div class="texto">
+  <p>
+    <strong>Cuando no escribo para marcas, escribo para mí.</strong> En Medium publico artículos
+    y relatos — el músculo de escribir por gusto, sin funnel ni call to action, que al final es
+    el que sostiene todo lo demás.
+  </p>
+  </div>
+  <div class="link-btns">
+    <a class="link-btn" href="https://medium.com/@baiena_" target="_blank" rel="noopener">Leer en Medium →</a>
+  </div>
 </section>
 
 <!-- CTA -->
