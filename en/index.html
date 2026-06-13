@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Copywriter and advertising creative at Magnific (formerly Freepik). Award-winning campaigns for Vans, Worten and World Vision, plus product, UX writing and AI experiments.">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Javi Sendra">
+  <meta property="og:title" content="Javi Sendra — Copywriter & Advertising Creative">
+  <meta property="og:description" content="Copywriter and advertising creative at Magnific (formerly Freepik). Award-winning campaigns for Vans, Worten and World Vision, plus product, UX writing and AI experiments.">
+  <meta property="og:url" content="https://javisendraguinea.com/en/">
+  <link rel="alternate" hreflang="es" href="https://javisendraguinea.com/">
+  <link rel="alternate" hreflang="en" href="https://javisendraguinea.com/en/">
+  <meta property="og:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta name="twitter:title" content="Javi Sendra — Copywriter & Advertising Creative">
+  <meta name="twitter:description" content="Copywriter and advertising creative at Magnific (formerly Freepik). Award-winning campaigns for Vans, Worten and World Vision, plus product, UX writing and AI experiments.">
+
+<title>Javi Sendra — Copywriter & Advertising Creative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- HERO: el borrador ---------- */
+  header{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw;position:relative}
+  .draft-label{font-family:var(--mono);font-size:.75rem;color:var(--gris-borrador);margin-bottom:1.6rem;letter-spacing:.06em}
+  .draft-label em{font-style:normal;color:var(--azahar)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7.2vw,6.4rem);line-height:1.04;letter-spacing:-.025em;max-width:18ch}
+  h1 .tachado{position:relative;color:var(--gris-borrador);white-space:nowrap}
+  h1 .tachado::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.07em;background:var(--azahar);transform:rotate(-1.2deg)}
+  h1 .final{color:var(--verde-botella)}
+  .caret{display:inline-block;width:.08em;height:.85em;background:var(--azahar);margin-left:.08em;vertical-align:-.08em;animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hero-sub{margin-top:2rem;max-width:46ch;font-size:1.06rem;color:var(--verde-tinta)}
+  .hero-sub a{color:inherit;text-decoration-color:var(--albero);text-underline-offset:3px}
+  .hero-meta{position:absolute;bottom:2rem;left:5vw;right:5vw;display:flex;justify-content:space-between;
+             font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);text-transform:uppercase;letter-spacing:.08em}
+
+  /* ---------- TRABAJOS: titulares ---------- */
+  section{padding:6.5rem 5vw}
+  .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--azahar);margin-bottom:2.6rem}
+  .work-row{display:grid;grid-template-columns:1fr minmax(180px,260px);gap:2rem;align-items:center;
+            padding:2.4rem 0;border-top:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+            text-decoration:none;color:inherit;transition:padding-left .25s ease}
+  .work-row:last-of-type{border-bottom:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent)}
+  .work-row:hover,.work-row:focus-visible{padding-left:1rem}
+  .work-row:hover .work-title{color:var(--azahar)}
+  .work-title{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4.4vw,3.4rem);line-height:1.05;letter-spacing:-.02em;transition:color .2s}
+  .work-desc{font-size:.95rem;color:var(--verde-tinta);margin-top:.6rem;max-width:52ch}
+  .work-tags{font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);text-transform:uppercase;letter-spacing:.06em;margin-top:.8rem}
+  .work-thumb{aspect-ratio:4/3;background:var(--verde-botella);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .work-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .work-thumb span{font-family:var(--mono);font-size:.7rem;color:var(--papel);opacity:.5;padding:1rem;text-align:center}
+
+  /* ---------- MAGNIFIC destacado ---------- */
+  .featured{background:var(--verde-botella);color:var(--papel);border-radius:14px;padding:4.5rem 5vw;margin:0 3vw}
+  .featured .eyebrow{color:var(--albero)}
+  .featured h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.02em;line-height:1.05;max-width:16ch}
+  .featured p.lede{margin-top:1.6rem;max-width:56ch;color:color-mix(in srgb,var(--papel) 82%,transparent)}
+  .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:3.2rem}
+  .featured-card{border:1px solid color-mix(in srgb,var(--papel) 22%,transparent);border-radius:8px;padding:1.5rem;transition:border-color .2s, transform .2s}
+  .featured-card:hover{border-color:var(--albero);transform:translateY(-3px)}
+  .featured-card h3{font-family:var(--display);font-weight:800;font-size:1.15rem;margin-bottom:.5rem}
+  .featured-card p{font-size:.9rem;color:color-mix(in srgb,var(--papel) 75%,transparent)}
+  .featured-card .num{font-family:var(--mono);font-size:.7rem;color:var(--albero);display:block;margin-bottom:.9rem;letter-spacing:.08em}
+  .featured-visual{margin-top:2.6rem;border-radius:10px;overflow:hidden}
+  .featured-visual img{width:100%;display:block}
+  .featured-link{display:inline-block;margin-top:2.6rem;font-family:var(--display);font-weight:800;
+                 font-size:clamp(1.1rem,2.4vw,1.5rem);letter-spacing:-.01em;color:var(--albero);
+                 text-decoration:none}
+  .featured-link:hover{color:var(--azahar)}
+
+  /* ---------- SOBRE MÍ ---------- */
+  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:start}
+  .about h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:1.4rem}
+  .about p{margin-bottom:1rem;max-width:58ch}
+  .about p a{color:inherit;text-decoration-color:var(--azahar);text-underline-offset:3px}
+  .about p a:hover{color:var(--azahar)}
+  .about .playlist{background:#fff;border:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);border-radius:10px;padding:1.6rem;font-size:.92rem}
+  .about .playlist a{color:inherit;text-decoration-color:var(--azahar);text-underline-offset:3px}
+  .about .playlist a:hover{color:var(--azahar)}
+  .about .playlist strong{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--azahar);display:block;margin-bottom:.7rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:6rem 5vw 3rem;border-radius:14px 14px 0 0;margin-top:6rem}
+  footer .big{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,9vw,7rem);letter-spacing:-.03em;line-height:.98}
+  footer .big a{color:inherit;text-decoration:none}
+  footer .big a:hover{color:var(--albero)}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:4rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .work-row{grid-template-columns:1fr;gap:1.2rem}
+    .work-thumb{order:-1;max-width:100%}
+    .about{grid-template-columns:1fr;gap:2.4rem}
+    .featured{margin:0;border-radius:0;padding:3.5rem 6vw}
+    .hero-meta{flex-direction:column;gap:.3rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Javi<br>Sendra</div>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="../index.html" lang="es">ES</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: el borrador que se corrige a sí mismo -->
+<header>
+  <h1>
+    I write <span class="tachado">well</span> <span class="tachado">fast</span>
+    <span class="final">so things actually happen</span><span class="caret" aria-hidden="true"></span>
+  </h1>
+  <p class="hero-sub">
+    Copywriter and advertising creative at <a href="#work">Magnific</a> (formerly Freepik).
+    From Seville. And if it helps me land the job, yes, I do have a caseta at la Feria.
+  </p>
+  <div class="hero-meta">
+    <span>Madrid</span>
+    <span>ES / EN</span>
+  </div>
+</header>
+
+<!-- TRABAJO: titulares, no cajitas -->
+<section id="work">
+  <p class="eyebrow">Selected work</p>
+
+  <a class="work-row" href="magnific.html">
+    <div>
+      <div class="work-title">Magnific (formerly Freepik)</div>
+      <p class="work-desc">Three years writing for Freepik. Rebranding, the B2B bet, Originals and the launches of the AI suite.</p>
+      <p class="work-tags">Copy · Product Marketing · 2023—now</p>
+    </div>
+    <div class="work-thumb"><img src="../img/magnific.png" alt="Be Magnific — rebranding visual"></div>
+  </a>
+
+  <a class="work-row" href="picem.html">
+    <div>
+      <div class="work-title">Pic'em</div>
+      <p class="work-desc">Product design and UX writing to help users keep their phone gallery in order.</p>
+      <p class="work-tags">UX Writing · Product</p>
+    </div>
+    <div class="work-thumb"><img src="../img/pic'em.png" alt="Pic'em — app to tidy your gallery"></div>
+  </a>
+
+  <a class="work-row" href="vans.html">
+    <div>
+      <div class="work-title">Vans 3xtra Shoe</div>
+      <p class="work-desc">The first 3-shoe pack for skaters: two of the dominant foot, one of the other. Double shortlist at Cannes Lions.</p>
+      <p class="work-tags">VCCP · Vans · Cannes Lions 2017</p>
+    </div>
+    <div class="work-thumb"><img src="../img/vans.png" alt="Vans 3xtra Shoe"></div>
+  </a>
+
+  <a class="work-row" href="lory.html">
+    <div>
+      <div class="work-title">Estate al Lory</div>
+      <p class="work-desc">A music video with Lory Money that became the most viral Black Friday campaign and lifted Worten's sales by 23%. Gold at the Inspirational Awards.</p>
+      <p class="work-tags">VCCP · Worten · Branded Content</p>
+    </div>
+    <div class="work-thumb"><img src="../img/lory.png" alt="Estate al Lory — Worten campaign with Lory Money"></div>
+  </a>
+
+  <a class="work-row" href="unbox.html">
+    <div>
+      <div class="work-title">Unbox Child Labour</div>
+      <p class="work-desc">Before every YouTube unboxing, the "boxing": pre-rolls showing the children who assemble the products. For World Vision. Triple Gold at El Chupete and Gold at Chime Cymbals.</p>
+      <p class="work-tags">VCCP · World Vision · El Chupete 2019</p>
+    </div>
+    <div class="work-thumb"><img src="../img/unbox.png" alt="Unbox Child Labour — campaign for World Vision"></div>
+  </a>
+
+  <a class="work-row" href="corazon.html">
+    <div>
+      <div class="work-title">Pon corazón a tu corazón</div>
+      <p class="work-desc">The country's best illustrators "donated" their hearts to help us look after our own. A 360º campaign, exhibition included, for the Spanish Heart Foundation.</p>
+      <p class="work-tags">360º Campaign · Spanish Heart Foundation</p>
+    </div>
+    <div class="work-thumb"><img src="../img/corazon.png" alt="Pon corazón a tu corazón — Spanish Heart Foundation"></div>
+  </a>
+
+  <a class="work-row" href="magna.html">
+    <div>
+      <div class="work-title">Sé infiel a ti mismo</div>
+      <p class="work-desc">Repositioning San Miguel Magna for the most contradictory generation: a campaign disloyal to what campaigns usually are, for a beer disloyal to itself.</p>
+      <p class="work-tags">After Madrid · San Miguel Magna</p>
+    </div>
+    <div class="work-thumb"><img src="../img/magna.png" alt="Sé infiel a ti mismo — San Miguel Magna"></div>
+  </a>
+</section>
+
+<!-- MAGNIFIC: entrada destacada -->
+<section class="featured" id="magnific">
+  <p class="eyebrow">Featured project</p>
+  <h2>From stock library to Europe's largest creative platform</h2>
+  <p class="lede">
+    Since I joined Freepik almost three years ago, the company has changed its name, its product,
+    its positioning and its category. I've been inside every one of those changes, putting them
+    into words.
+  </p>
+  <div class="featured-grid">
+    <div class="featured-card">
+      <span class="num">Rebranding</span>
+      <h3>Freepik is now Magnific</h3>
+      <p>The POV launch video, the adaptation of key touchpoints and the announcement to our creative partners.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">B2B</span>
+      <h3>Freepik Business</h3>
+      <p>From campaign brainstorming to every message in the funnel. The company's shift in focus to teams, not individuals.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">Studio</span>
+      <h3>Magnific Originals</h3>
+      <p>All the copy around the co-production program with the best audiovisual creators of the moment.</p>
+    </div>
+    <div class="featured-card">
+      <span class="num">Product</span>
+      <h3>AI launches</h3>
+      <p>Tools and features of the platform: posts, emails and campaigns for a suite that changes every week.</p>
+    </div>
+  </div>
+  <a class="featured-link" href="magnific.html">See the full project →</a>
+</section>
+
+<!-- IA LAB: proyectos personales con IA -->
+<section class="featured" id="ia-lab" style="margin-top:3rem">
+  <p class="eyebrow">Personal AI projects</p>
+  <h2>What I do when nobody's watching</h2>
+  <p class="lede">
+    AI isn't just my job: it's where I experiment. Personal projects written, directed and
+    produced from start to finish by me, with generative AI tools.
+  </p>
+  <div class="featured-visual"><img src="../img/desague.jpg" alt="El desagüe (the drain) — short film still"></div>
+  <div class="featured-grid">
+    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <span class="num">Short film</span>
+      <h3>El desagüe (the drain)</h3>
+      <p>A poetic short produced entirely with the Magnific Creative Suite: from script to final frame.</p>
+    </a>
+    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <span class="num">Print</span>
+      <h3>Airegin Beer</h3>
+      <p>A print campaign for a beer that doesn't exist. The claim, "Live between the lines", lives where beers live: between the foam lines on the glass.</p>
+    </a>
+  </div>
+  <a class="featured-link" href="ia-lab.html">See the full lab →</a>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="about">
+  <p class="eyebrow">About</p>
+  <div class="about">
+    <div>
+      <h2>More words, more words, fewer words.</h2>
+      <p>For 6 years I worked in advertising at VCCP Spain and After Madrid, with clients like Worten, Vans, Verti and Turespaña, among others. I also completed a UX Writing postgraduate degree at Shifta. I currently work as a Copywriter Specialist in the marketing department at Magnific.</p>
+      <p>I've done creative, copywriting, translation and UX writing work. I love being part of projects with deep user research that helps generate insights and solutions to real problems, iterating and testing each step with the end user.</p>
+      <p>I also enjoy building solid campaigns with strong concepts behind them — the kind that make you go "I wish I'd done that" when you see them. These days I combine creative strategy with AI tools like Magnific and Claude, chasing automation that's always under human guidance.</p>
+      <p>Oh! You can read some of my writing over <a href="https://medium.com/@baiena_" target="_blank" rel="noopener">here</a>.</p>
+    </div>
+    <aside class="playlist">
+      <strong>While you read this</strong>
+      I made a <a href="https://open.spotify.com/playlist/1jPAacDBwaVuDOvhvxJqMA?si=0441601c486e40f8" target="_blank" rel="noopener">Spotify playlist</a> to keep you company while you browse. Or to take a break from looking at portfolios.
+    </aside>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<footer id="contact">
+  <p class="big"><a href="mailto:javiersendraguinea@gmail.com">Let&#39;s talk →</a></p>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="https://instagram.com/baiena_" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/javier-sendra-guinea-525909138/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://open.spotify.com/user/sendrucio" target="_blank" rel="noopener">Spotify</a></span>
+    <span>Made with words</span>
+  </div>
+</footer>
+
+</body>
+</html>

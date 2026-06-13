@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A UX case study: a swipe-mechanic app to clean your phone gallery. Research, design, brand voice and a playable interactive prototype.">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Javi Sendra">
+  <meta property="og:title" content="Pic'em — Javi Sendra">
+  <meta property="og:description" content="A UX case study: a swipe-mechanic app to clean your phone gallery. Research, design, brand voice and a playable interactive prototype.">
+  <meta property="og:url" content="https://javisendraguinea.com/en/picem.html">
+  <meta property="og:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta name="twitter:title" content="Pic'em — Javi Sendra">
+  <meta name="twitter:description" content="A UX case study: a swipe-mechanic app to clean your phone gallery. Research, design, brand voice and a playable interactive prototype.">
+
+<title>Pic'em — Javi Sendra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  .logo a{color:inherit;text-decoration:none}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- CABECERA DE PROYECTO ---------- */
+  .proj-header{padding:9rem 5vw 3rem;max-width:1150px;margin-inline:auto}
+  .back{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;
+        color:var(--gris-borrador);text-decoration:none;display:inline-block;margin-bottom:2rem}
+  .back:hover{color:var(--azahar)}
+  .proj-header h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6.5vw,5.4rem);
+                  line-height:1.02;letter-spacing:-.025em}
+  .proj-meta{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+             color:var(--gris-borrador);margin-top:1.4rem}
+  .reto{margin-top:2.4rem;font-size:1.15rem;color:var(--verde-tinta);max-width:60ch}
+  .reto strong{color:var(--verde-botella)}
+  .idea{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.5rem);
+        line-height:1.15;letter-spacing:-.02em;color:var(--verde-botella);
+        max-width:26ch;margin-top:2.8rem;padding-left:1.4rem;
+        border-left:4px solid var(--azahar)}
+
+  /* ---------- SECCIONES ---------- */
+  section{padding:0}
+  .proj-section{padding:4.5rem 5vw;max-width:1150px;margin-inline:auto;
+                display:grid;grid-template-columns:minmax(240px,.9fr) 1.4fr;gap:1rem 4rem;align-items:start}
+  .proj-section .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1rem;grid-column:1}
+  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.7rem);
+                   line-height:1.08;letter-spacing:-.02em;grid-column:1;position:sticky;top:6rem}
+  .proj-section .texto{grid-column:2;grid-row:1/span 3}
+  .proj-section p{max-width:62ch;margin-bottom:1rem;color:var(--verde-tinta)}
+  .proj-visual{grid-column:1/-1;margin-top:2rem;border-radius:10px;overflow:hidden}
+  .proj-visual img{width:100%;display:block}
+  .proj-visual.transparente{border-radius:0;overflow:visible}
+  .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
+                  margin-top:.8rem;letter-spacing:.04em}
+  .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
+               border-radius:10px;overflow:hidden;background:var(--verde-botella)}
+  .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .proto-btns{grid-column:1/-1;display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+  .proto-btn{font-family:var(--body);font-weight:600;font-size:.95rem;text-decoration:none;
+             padding:.85rem 1.5rem;border-radius:10px;background:var(--azahar);color:#fff;transition:transform .15s}
+  .proto-btn:hover{transform:translateY(-2px)}
+  .proto-btn.ghost{background:transparent;color:var(--verde-botella);
+                   border:1.5px solid color-mix(in srgb,var(--verde-botella) 35%,transparent)}
+  .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
+           margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
+
+  /* ---------- STATS ---------- */
+  .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+         gap:1.2rem;margin-top:2rem}
+  .stat{border:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+        border-radius:8px;padding:1.4rem}
+  .stat .num{font-family:var(--display);font-weight:800;font-size:2.4rem;letter-spacing:-.02em;
+             color:var(--azahar);display:block;line-height:1}
+  .stat p{font-size:.88rem;margin:.6rem 0 0;color:var(--verde-tinta)}
+
+  /* ---------- CITA DE VOZ ---------- */
+  .voz{grid-column:1/-1;margin-top:2rem;background:var(--verde-botella);color:var(--papel);
+       border-radius:10px;padding:2.4rem;font-family:var(--display);font-weight:800;
+       font-size:clamp(1.3rem,3vw,2rem);letter-spacing:-.02em;line-height:1.2}
+
+  /* ---------- CTA FINAL ---------- */
+  .proj-cta{padding:4rem 5vw 1rem;max-width:1150px;margin-inline:auto}
+  .proj-cta .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--azahar);margin-bottom:.8rem}
+  .proj-cta a{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);
+              letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .proj-cta a:hover{color:var(--azahar)}
+
+  /* ---------- SIGUIENTE PROYECTO ---------- */
+  .next-proj{padding:5rem 5vw 7rem;max-width:1150px;margin-inline:auto}
+  .next-proj .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                      letter-spacing:.1em;color:var(--gris-borrador);margin-bottom:.8rem}
+  .next-proj a{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.5vw,3.4rem);
+               letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .next-proj a:hover{color:var(--azahar)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:3rem 5vw;border-radius:14px 14px 0 0}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .proj-header{padding-top:7rem}
+    .proj-section{grid-template-columns:1fr;gap:.6rem}
+    .proj-section h2{position:static;grid-column:1;margin-bottom:1rem}
+    .proj-section .texto{grid-column:1;grid-row:auto}
+    .proj-visual,.visual-caption,.stats,.voz{grid-column:1}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html">Javi<br>Sendra</a></div>
+  <ul>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="../picem.html" lang="es">ES</a></li>
+  </ul>
+</nav>
+
+<!-- CABECERA -->
+<div class="proj-header">
+  <a class="back" href="index.html#work">← Back to work</a>
+  <h1>Pic'em</h1>
+  <p class="proj-meta">Product Design · UX Writing · Personal project</p>
+  <p class="reto">
+    <strong>The challenge: many users share the same problem with their smartphone gallery —
+    waaaay too many items to delete, and zero desire to do it.</strong>
+  </p>
+  <p class="idea">Tinder-style cleaning for your gallery: 30 photos a day, and you decide
+  which lives and which dies.</p>
+  <p class="reto">
+    As a smartphone user, I realized my gallery — like many around me — was filling up with
+    selfies, duplicates, screenshots and memes that only steal storage. And even after deleting
+    bunches of files now and then, my gallery kept growing faster. So I did what a product designer
+    would: research whether the problem was just mine.
+  </p>
+</div>
+
+<!-- INVESTIGACIÓN -->
+<section class="proj-section" id="investigacion">
+  <p class="eyebrow">Research</p>
+  <h2>It's not (just) storage: it's order</h2>
+  <div class="texto">
+  <p>
+    <strong>Surveys and interviews with friends, family and colleagues surfaced three takeaways
+    that defined the product.</strong> First: we don't clean just for space. Every respondent
+    admitted to wanting a cleaner, more organized gallery even without storage problems — the sheer
+    volume makes the task feel harder, so it gets put off.
+  </p>
+  <p>
+    Second: we do it occasionally, not as a routine — in spare moments, travelling or out of
+    signal, deleting between 100 and 300 files per session. And third, the most important: nobody
+    wants an app deciding what gets deleted for them. User control was non-negotiable.
+  </p>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">100%</span><p>wanted a cleaner, more organized gallery, even without storage problems.</p></div>
+    <div class="stat"><span class="num">84%</span><p>clean their smartphone only occasionally, in spare moments.</p></div>
+    <div class="stat"><span class="num">16%</span><p>had ever used a competitor's cleaning app.</p></div>
+  </div>
+  <div class="proj-visual"><img src="../img/picem-research.jpg" alt="Pared de post-its con las conclusiones de la investigación agrupadas por temáticas"></div>
+  <p class="visual-caption">The research wall: survey and interview findings grouped by theme — storage, time, choosing and recovering photos, categories.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-persona.jpg" alt="User persona: Pedro, 24 años, diseñador gráfico"></div>
+  <p class="visual-caption">Pedro, 24, graphic designer and official meme supplier in his friend group: the user persona.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-empathy.jpg" alt="Empathy map de Pedro"></div>
+  <p class="visual-caption">The empathy map: what Pedro thinks, feels, sees and says about his 4,000-photo gallery.</p>
+</section>
+
+<hr class="divider">
+
+<!-- INSIGHT -->
+<section class="proj-section" id="insight">
+  <p class="eyebrow">The insight</p>
+  <h2>Competitors free up space. Nobody builds the habit.</h2>
+  <div class="texto">
+  <p>
+    <strong>Every app on the market focuses on bulk deletion and reporting storage status</strong>
+    — they work as a one-off remedy for lack of space, not as a solution to the underlying problem.
+    The opportunity was clear: help users build and keep a low-effort cleaning routine, nudged by
+    daily notifications. Less "free up 4GB now", more "a little bit every day".
+  </p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DISEÑO -->
+<section class="proj-section" id="diseno">
+  <p class="eyebrow">The design</p>
+  <h2>Swipe to decide</h2>
+  <div class="texto">
+  <p>
+    <strong>After two weeks wireframing on paper and Figma, I imitated the mechanic of dating
+    apps</strong> — familiar to the target audience (20-35) and able to turn a tedious task into
+    something almost fun. Instead of bulk deletion, 30 items a day: an intermediate number that adds
+    up to 210 a week, close to what interviewees deleted per session.
+  </p>
+  <p>
+    After several iterations and reviews with UX people, I simplified the actions to four: delete,
+    keep, skip and rewind. Pic'em deletes nothing automatically — the trash only empties when the
+    user decides, because the research made it clear: control is theirs. And a dropdown lets you
+    filter by file category, one of the most requested features in the surveys.
+  </p>
+  </div>
+  <div class="proj-visual transparente"><img src="../img/picem-canvas.jpg" alt="Value Proposition Canvas y priorización MoSCoW de Pic'em"></div>
+  <p class="visual-caption">Value Proposition Canvas and MoSCoW to scope the product: recoverable trash, sessions of 30, daily notifications as must-haves.</p>
+  <div class="proj-visual"><img src="../img/picem-wireframes.jpg" alt="Wireframes en papel de los flujos de Pic'em"></div>
+  <p class="visual-caption">Two weeks of paper wireframes: cleaning flows, file deletion and homepage.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-mockups-early.jpg" alt="Primeras pantallas de Pic'em en Figma"></div>
+  <p class="visual-caption">First Figma screens: file categories, video selection and the swipe-mechanic tutorial.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-ui-final.jpg" alt="Interfaz final de Pic'em con la mecánica de swipe"></div>
+  <p class="visual-caption">The final interface: swipe, daily counter of 30, trash and the 4 actions.</p>
+</section>
+
+<hr class="divider">
+
+<!-- VOZ -->
+<section class="proj-section" id="voz">
+  <p class="eyebrow">UX Writing</p>
+  <h2>An app that talks to you like a friend</h2>
+  <div class="texto">
+  <p>
+    <strong>Before designing a single screen, I gave the brand a personality.</strong> Inspired by
+    routines like skincare, I decided Pic'em would be more like the friend who reminds you — with
+    love and a bit of sass — that your gallery is a mess, than a cold service obsessed with numbers.
+    That voice lives in every interaction: the name and its tagline (<em>little byte little</em>),
+    the onboarding, the notifications — <em>"Skincare routine &lt; Gallerycare routine!"</em> —, the
+    success messages and the empty states.
+  </p>
+  <p>
+    My favourite: the confirmation modal when emptying the trash, which warns there's no going
+    back by quoting Katy Perry — <em>"Like 'Dark Horse' wisely said: 'There's no going back'"</em>.
+    Because even an irreversible-delete warning can be funny without losing clarity.
+  </p>
+  </div>
+  <div class="voz">B*tch, you better be cleaning your gallery! 💅🏽</div>
+  <p class="visual-caption">The brand personality, in one line.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-voice.jpg" alt="Página de brand voice de Pic'em: sencilla, casual y fresca"></div>
+  <p class="visual-caption">The brand voice — simple, casual and fresh — and its references: from Oatly to Duolingo by way of the Fresh Prince.</p>
+  <div class="proj-visual transparente"><img src="../img/picem-screens-copy.jpg" alt="Pantallas con el UX writing de Pic'em: onboarding, fin de sesión y notificación"></div>
+  <p class="visual-caption">The copy in action: onboarding, the "Done for the day!" with upsell, and the lock-screen notification.</p>
+</section>
+
+<hr class="divider">
+
+<!-- PRODUCTO FINAL -->
+<section class="proj-section" id="producto">
+  <p class="eyebrow">The product</p>
+  <h2>From the Figma prototype to the AI prototype</h2>
+  <div class="texto">
+  <p>
+    <strong>In 2026 I revisited the project with a tool that didn't exist when I designed it:
+    Claude.</strong> I rebuilt the original Figma prototype as a functional AI-generated prototype,
+    where you can add your own photos for a realistic feel of the app. Two versions of the same
+    product, a few years apart and a complete shift in how prototypes get built.
+  </p>
+  <p>
+    <em>Epilogue: some time after finishing this project, someone launched an app with an almost
+    identical mechanic. I take it as the best market validation possible — and as a reminder that
+    good ideas are worth registering, too.</em>
+  </p>
+  </div>
+  <div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/787972898" title="Pic'em — presentación del proyecto"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">Project presentation video.</p>
+  <div class="proto-btns">
+    <a class="proto-btn" href="picem-prototipo.html">Try the interactive prototype →</a>
+    <a class="proto-btn ghost" href="https://www.figma.com/design/jMTvIwTTO2887taUvdq3vT/PIC-EM?node-id=238-4529" target="_blank" rel="noopener">See the original prototype (Figma) →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="proj-cta">
+  <p class="eyebrow">Got a similar challenge?</p>
+  <a href="mailto:javiersendraguinea@gmail.com">Let's talk →</a>
+</div>
+
+<!-- SIGUIENTE PROYECTO -->
+<div class="next-proj">
+  <p class="eyebrow">Next project</p>
+  <a href="vans.html">Vans 3xtra Shoe →</a>
+</div>
+
+<footer>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="index.html">javisendra</a></span>
+    <span>Made with words</span>
+  </div>
+</footer>
+
+</body>
+</html>

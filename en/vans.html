@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The first 3-shoe pack for skaters: two of the dominant foot, one of the other. Double shortlist at Cannes Lions 2017. VCCP for Vans.">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Javi Sendra">
+  <meta property="og:title" content="Vans 3xtra Shoe — Javi Sendra">
+  <meta property="og:description" content="The first 3-shoe pack for skaters: two of the dominant foot, one of the other. Double shortlist at Cannes Lions 2017. VCCP for Vans.">
+  <meta property="og:url" content="https://javisendraguinea.com/en/vans.html">
+  <meta property="og:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://javisendraguinea.com/img/og-image.jpg">
+  <meta name="twitter:title" content="Vans 3xtra Shoe — Javi Sendra">
+  <meta name="twitter:description" content="The first 3-shoe pack for skaters: two of the dominant foot, one of the other. Double shortlist at Cannes Lions 2017. VCCP for Vans.">
+
+<title>Vans 3xtra Shoe — Javi Sendra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-botella:#0C2B22;
+    --verde-tinta:#123B2F;
+    --papel:#F1F3EC;
+    --albero:#E8A14B;
+    --azahar:#FF6B3D;
+    --gris-borrador:#9AA89F;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Instrument Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--verde-botella);font-family:var(--body);line-height:1.6}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:1.1rem 5vw;mix-blend-mode:darken}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase;line-height:.9}
+  .logo a{color:inherit;text-decoration:none}
+  nav ul{display:flex;gap:1.8rem;list-style:none}
+  nav a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover,nav a:focus-visible{color:var(--azahar)}
+  a:focus-visible{outline:2px solid var(--azahar);outline-offset:3px}
+
+  /* ---------- CABECERA DE PROYECTO ---------- */
+  .proj-header{padding:9rem 5vw 3rem;max-width:1150px;margin-inline:auto}
+  .back{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;
+        color:var(--gris-borrador);text-decoration:none;display:inline-block;margin-bottom:2rem}
+  .back:hover{color:var(--azahar)}
+  .proj-header h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6.5vw,5.4rem);
+                  line-height:1.02;letter-spacing:-.025em}
+  .proj-meta{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+             color:var(--gris-borrador);margin-top:1.4rem}
+  .reto{margin-top:2.4rem;font-size:1.15rem;color:var(--verde-tinta);max-width:60ch}
+  .reto strong{color:var(--verde-botella)}
+  .idea{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.5rem);
+        line-height:1.15;letter-spacing:-.02em;color:var(--verde-botella);
+        max-width:26ch;margin-top:2.8rem;padding-left:1.4rem;
+        border-left:4px solid var(--azahar)}
+
+  /* ---------- SECCIONES ---------- */
+  .proj-section{padding:4.5rem 5vw;max-width:1150px;margin-inline:auto;
+                display:grid;grid-template-columns:minmax(240px,.9fr) 1.4fr;gap:1rem 4rem;align-items:start}
+  .proj-section .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                         letter-spacing:.1em;color:var(--azahar);margin-bottom:1rem;grid-column:1}
+  .proj-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.7rem);
+                   line-height:1.08;letter-spacing:-.02em;grid-column:1;position:sticky;top:6rem}
+  .proj-section .texto{grid-column:2;grid-row:1/span 3}
+  .proj-section p{max-width:62ch;margin-bottom:1rem;color:var(--verde-tinta)}
+  .proj-visual{grid-column:1/-1;margin-top:2rem;border-radius:10px;overflow:hidden}
+  .proj-visual img{width:100%;display:block}
+  .proj-visual.transparente{border-radius:0;overflow:visible}
+  .visual-caption{grid-column:1/-1;font-family:var(--mono);font-size:.72rem;color:var(--gris-borrador);
+                  margin-top:.8rem;letter-spacing:.04em}
+  .embed-video{grid-column:1/-1;margin-top:2rem;aspect-ratio:16/9;width:100%;
+               border-radius:10px;overflow:hidden;background:var(--verde-botella)}
+  .embed-video iframe{width:100%;height:100%;border:0;display:block}
+  .divider{border:none;border-top:1px solid color-mix(in srgb,var(--verde-botella) 15%,transparent);
+           margin:0 auto;max-width:calc(min(1150px,100%) - 10vw)}
+
+  /* ---------- PREMIOS ---------- */
+  .premios{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+           gap:1.2rem;margin-top:2rem}
+  .premio{border:1px solid color-mix(in srgb,var(--verde-botella) 18%,transparent);
+          border-radius:8px;padding:1.4rem}
+  .premio .cert{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;
+                letter-spacing:.08em;color:var(--azahar);display:block;margin-bottom:.6rem}
+  .premio p{font-family:var(--display);font-weight:800;font-size:1.1rem;margin:0;line-height:1.25;
+            color:var(--verde-botella)}
+
+  /* ---------- FICHA TÉCNICA ---------- */
+  .ficha{grid-column:1/-1;margin-top:2rem;display:grid;
+         grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.4rem 2rem;
+         font-size:.9rem;color:var(--verde-tinta)}
+  .ficha div{padding:.5rem 0;border-top:1px solid color-mix(in srgb,var(--verde-botella) 12%,transparent)}
+  .ficha span{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
+              letter-spacing:.06em;color:var(--gris-borrador);display:block}
+
+  /* ---------- CTA FINAL ---------- */
+  .proj-cta{padding:4rem 5vw 1rem;max-width:1150px;margin-inline:auto}
+  .proj-cta .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--azahar);margin-bottom:.8rem}
+  .proj-cta a{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);
+              letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .proj-cta a:hover{color:var(--azahar)}
+
+  /* ---------- SIGUIENTE PROYECTO ---------- */
+  .next-proj{padding:5rem 5vw 7rem;max-width:1150px;margin-inline:auto}
+  .next-proj .eyebrow{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;
+                      letter-spacing:.1em;color:var(--gris-borrador);margin-bottom:.8rem}
+  .next-proj a{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.5vw,3.4rem);
+               letter-spacing:-.02em;color:var(--verde-botella);text-decoration:none}
+  .next-proj a:hover{color:var(--azahar)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-botella);color:var(--papel);padding:3rem 5vw;border-radius:14px 14px 0 0}
+  .foot-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+             font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;
+             color:color-mix(in srgb,var(--papel) 60%,transparent)}
+  .foot-meta a{color:inherit;text-decoration:none}
+  .foot-meta a:hover{color:var(--albero)}
+
+  @media (max-width:760px){
+    nav ul{gap:1.1rem}
+    .proj-header{padding-top:7rem}
+    .proj-section{grid-template-columns:1fr;gap:.6rem}
+    .proj-section h2{position:static;grid-column:1;margin-bottom:1rem}
+    .proj-section .texto{grid-column:1;grid-row:auto}
+    .proj-visual,.visual-caption,.premios,.ficha,.embed-video{grid-column:1}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html">Javi<br>Sendra</a></div>
+  <ul>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="../vans.html" lang="es">ES</a></li>
+  </ul>
+</nav>
+
+<!-- CABECERA -->
+<div class="proj-header">
+  <a class="back" href="index.html#work">← Back to work</a>
+  <h1>Vans 3xtra Shoe</h1>
+  <p class="proj-meta">VCCP · Vans · Cannes Lions 2017</p>
+  <p class="reto">
+    <strong>The challenge: making skaters' shoes last longer.</strong>
+  </p>
+  <p class="idea">The first 3-shoe pack: two of the dominant foot, one of the other.</p>
+  <p class="reto">
+    Every skater spends way too much money on skate shoes: the constant friction between the
+    dominant foot — the one you do the tricks with — and the grip wears one shoe out much faster
+    than the other. So skaters end up throwing the whole pair away and buying another, when only
+    one shoe was worn out.
+  </p>
+</div>
+
+<!-- LA IDEA -->
+<section class="proj-section" id="idea">
+  <p class="eyebrow">The idea</p>
+  <h2>Selling shoes in threes</h2>
+  <div class="texto">
+  <p>
+    <strong>If the problem is that one shoe dies before the other, the answer isn't a tougher
+    shoe: it's one more shoe.</strong> We created Vans 3xtra Shoe, the first pack with two shoes of
+    the dominant foot and one of the other. Once the dominant-foot shoe wore out, skaters had a
+    spare to replace it without buying a new pair.
+  </p>
+  <p>
+    A product idea before an advertising one — hence the double shortlist at Cannes: one in
+    Promo & Activation and one, the one we were proudest of, in Product Design.
+  </p>
+  </div>
+  <div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/705815788" title="Vans 3xtra Shoe — case study"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="visual-caption">The case, in video.</p>
+  <div class="proj-visual transparente"><img src="../img/vans.png" alt="Vans 3xtra Shoe — el pack de 3 zapatillas"></div>
+  <p class="visual-caption">The pack: two of the dominant foot, one of the other.</p>
+</section>
+
+<hr class="divider">
+
+<!-- PREMIOS Y FICHA -->
+<section class="proj-section" id="premios">
+  <p class="eyebrow">Recognition</p>
+  <h2>Awards & credits</h2>
+  <div class="texto">
+  <p>
+    The campaign earned a double shortlist at Cannes Lions 2017, competing in two different
+    categories — proof that the idea worked both as activation and as product.
+  </p>
+  </div>
+  <div class="premios">
+    <div class="premio"><span class="cert">Cannes Lions 2017</span><p>Shortlist · Promo & Activation</p></div>
+    <div class="premio"><span class="cert">Cannes Lions 2017</span><p>Shortlist · Product Design</p></div>
+  </div>
+  <div class="ficha">
+    <div><span>Agency</span>VCCP Spain</div>
+    <div><span>Client</span>Vans</div>
+    <div><span>Executive Creative Director</span>Beto Nahmad</div>
+    <div><span>Creative Director</span>Charlie Pérez Sauquillo</div>
+    <div><span>Copywriting</span>Javi Sendra, Manu Gómez</div>
+    <div><span>Art Direction</span>Sergio Kian, Gonzalo Arce</div>
+    <div><span>Account Management</span>Carlota Arriols, Adrián Conrado</div>
+    <div><span>Design</span>Daniel Sáez</div>
+    <div><span>Produced by</span>The Monday Project</div>
+    <div><span>Director</span>Uri Segarra</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="proj-cta">
+  <p class="eyebrow">Got a similar challenge?</p>
+  <a href="mailto:javiersendraguinea@gmail.com">Let's talk →</a>
+</div>
+
+<!-- SIGUIENTE PROYECTO -->
+<div class="next-proj">
+  <p class="eyebrow">Next project</p>
+  <a href="lory.html">Estate al Lory →</a>
+</div>
+
+<footer>
+  <div class="foot-meta">
+    <span>© Javi Sendra</span>
+    <span><a href="index.html">javisendra</a></span>
+    <span>Made with words</span>
+  </div>
+</footer>
+
+</body>
+</html>
