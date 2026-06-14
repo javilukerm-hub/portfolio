@@ -90,6 +90,26 @@
   .featured-card .num{font-family:var(--mono);font-size:.7rem;color:var(--albero);display:block;margin-bottom:.9rem;letter-spacing:.08em}
   .featured-visual{margin-top:2.6rem;border-radius:10px;overflow:hidden}
   .featured-visual img{width:100%;display:block}
+  /* Lab: 1 card grande horizontal + 3 cuadradas con imagen */
+  .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.2rem}
+  .lab-card{border:1px solid color-mix(in srgb,var(--papel) 22%,transparent);border-radius:10px;overflow:hidden;
+            transition:border-color .2s, transform .2s;display:flex;flex-direction:column}
+  .lab-card:hover{border-color:var(--albero);transform:translateY(-3px)}
+  .lab-card .thumb{overflow:hidden;background:color-mix(in srgb,var(--papel) 8%,transparent)}
+  .lab-card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .lab-card:hover .thumb img{transform:scale(1.04)}
+  .lab-card .body{padding:1.4rem 1.5rem 1.6rem}
+  .lab-card h3{font-family:var(--display);font-weight:800;font-size:1.15rem;margin-bottom:.5rem}
+  .lab-card p{font-size:.9rem;color:color-mix(in srgb,var(--papel) 75%,transparent)}
+  .lab-card .num{font-family:var(--mono);font-size:.7rem;color:var(--albero);display:block;margin-bottom:.9rem;letter-spacing:.08em}
+  /* card grande: ocupa las 3 columnas, imagen + texto en horizontal */
+  .lab-card.wide{grid-column:1 / -1;flex-direction:row}
+  .lab-card.wide .thumb{flex:0 0 58%}
+  .lab-card.wide .thumb img{aspect-ratio:16/9}
+  .lab-card.wide .body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:2rem 2.2rem}
+  .lab-card.wide h3{font-size:1.5rem}
+  /* cuadradas: thumb cuadrado */
+  .lab-card.sq .thumb{aspect-ratio:1/1}
   .featured-link{display:inline-block;margin-top:2.6rem;font-family:var(--display);font-weight:800;
                  font-size:clamp(1.1rem,2.4vw,1.5rem);letter-spacing:-.01em;color:var(--albero);
                  text-decoration:none}
@@ -126,6 +146,12 @@
     .work-thumb{order:-1;max-width:100%}
     .about{grid-template-columns:1fr;gap:2.4rem}
     .featured{margin:0;border-radius:0;padding:3.5rem 6vw}
+    .lab-grid{grid-template-columns:1fr}
+    .lab-card.wide{flex-direction:column}
+    .lab-card.wide .thumb{flex:none}
+    .lab-card.wide .thumb img{aspect-ratio:16/10}
+    .lab-card.wide .body{padding:1.4rem 1.5rem 1.6rem}
+    .lab-card.wide h3{font-size:1.25rem}
     .hero-meta{flex-direction:column;gap:.3rem}
   }
   @media (prefers-reduced-motion:reduce){
@@ -280,27 +306,38 @@
   <p class="lede">
     Música, redes, escritura y experimentos con IA. Ningún brief y muchas ganas de seguir creando.
   </p>
-  <div class="featured-visual"><img src="img/desague.jpg" alt="El desagüe (the drain) — fotograma del corto"></div>
-  <div class="featured-grid">
-    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
-      <span class="num">Corto</span>
-      <h3>El desagüe (the drain)</h3>
-      <p>Un corto poético producido íntegramente con Magnific Spaces: desde el tratamiento hasta el último fotograma.</p>
+  <div class="lab-grid">
+    <a class="lab-card wide" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <div class="thumb"><img src="img/desague.jpg" alt="El desagüe (the drain) — fotograma del corto"></div>
+      <div class="body">
+        <span class="num">Corto</span>
+        <h3>El desagüe (the drain)</h3>
+        <p>Un corto poético producido íntegramente con Magnific Spaces: desde el tratamiento hasta el último fotograma.</p>
+      </div>
     </a>
-    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
-      <span class="num">Gráficas</span>
-      <h3>Airegin Beer</h3>
-      <p>Campaña print para una cerveza ficticia. El claim, "Live between the lines", vive donde viven las cervezas: entre las líneas de espuma del vaso.</p>
+    <a class="lab-card sq" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <div class="thumb"><img src="img/airegin-1.jpg" alt="Airegin Beer — gráfica de campaña"></div>
+      <div class="body">
+        <span class="num">Gráficas</span>
+        <h3>Airegin Beer</h3>
+        <p>Campaña print para una cerveza ficticia. El claim, "Live between the lines", vive donde viven las cervezas: entre las líneas de espuma del vaso.</p>
+      </div>
     </a>
-    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
-      <span class="num">Música & RRSS</span>
-      <h3>Animo Pánico</h3>
-      <p>Mi grupo de música y campo de pruebas para redes. Videoclips e ideas para un formato donde las marcas se juegan la atención cada día.</p>
+    <a class="lab-card sq" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <div class="thumb"><img src="img/animopanico.jpg" alt="Animo Pánico — la banda"></div>
+      <div class="body">
+        <span class="num">Música & RRSS</span>
+        <h3>Animo Pánico</h3>
+        <p>Mi grupo de música y campo de pruebas para redes. Videoclips e ideas para un formato donde las marcas se juegan la atención cada día.</p>
+      </div>
     </a>
-    <a class="featured-card" href="ia-lab.html" style="text-decoration:none;color:inherit">
-      <span class="num">Escritura</span>
-      <h3>Artículos y relatos</h3>
-      <p>En Medium escribo por gusto textos donde puedes conocerme aún más.</p>
+    <a class="lab-card sq" href="ia-lab.html" style="text-decoration:none;color:inherit">
+      <div class="thumb"><img src="img/medium.webp" alt="Artículos y relatos — Medium"></div>
+      <div class="body">
+        <span class="num">Escritura</span>
+        <h3>Artículos y relatos</h3>
+        <p>En Medium escribo por gusto textos donde puedes conocerme aún más.</p>
+      </div>
     </a>
   </div>
   <a class="featured-link" href="ia-lab.html">Ver mis proyectos →</a>
